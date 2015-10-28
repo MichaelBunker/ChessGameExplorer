@@ -11,5 +11,16 @@ RSpec.describe "UserAccounts", type: :request do
       click_on "Sign up"
       expect(page).to have_content "Hello World!"
     end
+
+    it "logs a user in" do
+      User.create(email: "bunker@gmail.com", password: "password123", password_confirmation: "password123")
+      visit root_path
+      click_link "Login"
+      fill_in "Email", with: "bunker@gmail.com"
+      fill_in "Password", with: "password123"
+      click_on "Log in"
+      expect(page).to have_content "Hello World!"
+    end
+
   end
 end
