@@ -49,6 +49,12 @@ GEM
       sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
+    capybara (2.5.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -117,6 +123,9 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack_session_access (0.1.1)
+      builder (>= 2.0.0)
+      rack (>= 1.0.0)
     rails (4.2.4)
       actionmailer (= 4.2.4)
       actionpack (= 4.2.4)
@@ -200,6 +209,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -207,6 +218,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
+  capybara
   coffee-rails
   devise
   factory_girl_rails
@@ -217,6 +229,7 @@ DEPENDENCIES
   pg
   pry
   quiet_assets
+  rack_session_access
   rails
   rspec-rails
   sass-rails
