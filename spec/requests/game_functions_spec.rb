@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "PlayerFunctions", type: :request do
+RSpec.describe "GameFunctions", type: :request do
   before do
-    User.create(email: "bunker@gmail.com", password: "password123", password_confirmation: "password123")
+    user = User.create(email: "bunker@gmail.com", password: "password123", password_confirmation: "password123")
     # page.set_rack_session('warden.user.user.key' => User.serialize_into_session(user).unshift("User"))
     visit root_path
     click_link "Login"
@@ -11,8 +11,8 @@ RSpec.describe "PlayerFunctions", type: :request do
     click_on "Log in"
   end
 
-  describe 'the add a player process' do
-    it "adds a player" do
+  describe 'the add a game process' do
+    it "adds a game" do
 
       click_link "Add a new game"
       fill_in "Notation", with: "1.e4e5 2.nf3nc6"
@@ -33,13 +33,15 @@ RSpec.describe "PlayerFunctions", type: :request do
     end
   end
 
-  # describe 'the destroy a question process' do
-  #   it "destroy a question" do
-  #     player = Player.create(name: "Jack", rating: 2000)
-  #     visit root_path
-  #     click_link "Delete this game"
-  #     expect(page).to have_no_content "boo"
-  #   end
-  # end
+  describe 'the destroy a game process' do
+    it "destroy a game" do
+      visit root_path
+      click_link "Add a new game"
+      fill_in "Notation", with: "1.e4e5 2.nf3nc6"
+      click_on "Add"
+      click_link "Delete this game"
+      expect(page).to have_content "Hello World!"
+    end
+  end
 
 end

@@ -2,3 +2,4 @@
 
 
 <h5><%= link_to 'Edit this game', edit_game_path(@game) %></h5>
+<h5><%= link_to 'Delete this game', game_path(@game), data: {confirm: "Are You Sure?", method: "delete"} %></h5>
