@@ -8,14 +8,15 @@ class GamesController < ApplicationController
   def create
     @players = Player.all
     @game = Game.new(game_params)
-    if @game.save
-      players = params[:Player]
-      players.each do |player|
-        @game.players.create(name: name, game_id: game_id)
-      redirect_to game_path(@game)
-    else
-      render :new
+    players = params[:Player]
+    players.each do |player|
+    binding.pry
+      @player = Player.new(name: player[0], rating: player[1])
+      @player.save
+      @game.players.push(@player)
     end
+    @game.save
+    redirect_to game_path(@game)
   end
 
   def show
@@ -44,5 +45,9 @@ class GamesController < ApplicationController
 private
   def game_params
     params.require(:game).permit(:notation)
+  end
+
+  def player_params
+    params.permit(:Player)
   end
 end

@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'hirb'
 gem 'devise'
 gem "paperclip", "~> 4.3"
+gem 'formtastic'
 
 group :development do
   gem 'byebug'
