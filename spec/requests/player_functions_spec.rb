@@ -43,7 +43,7 @@ RSpec.describe "PlayerFunctions", type: :request do
       visit root_path
       click_link "Jack"
       click_link "Delete this player"
-      expect(page).to have_no_content "Hello World!"
+      expect(page).to have_no_content "Jack"
     end
   end
 
