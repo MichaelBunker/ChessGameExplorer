@@ -5,10 +5,36 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  ## example
+  # def create
+  #   @post = Post.find(params[:post_id])
+  #   @tag = @post.tags.new(tag_params) #should have find or create instead of new to accomodate same tags.
+  #   @post.tags.push(@tag)
+  #   if @tag.save
+  #     redirect_to post_path(@post)
+  #   else
+  #     render :new
+  #   end
+  # end
+  # # trying to modify for my purposes
+  # def create
+  #   players = params[:player]
+  #   @game = player.games.new(game_params)
+  #   binding.pry
+  #   players.each do |player|
+  #     @game.players.push(player)
+  #   end
+  #   @game.save
+  #   redirect_to game_path(@game)
+  # end
+  # ##
+
+
   def create
     @players = Player.all
     @game = Game.new(game_params)
-    players = params[:player]
+    players = Player.find(params[:player_ids])
+
     binding.pry
     players.each do |player|
       @game.players.push(player)
@@ -44,7 +70,7 @@ class GamesController < ApplicationController
 
 private
   def game_params
-    params.require(:game).permit(:notation)
+    params.require(:game).permit(:notation, :player_id)
   end
 
   # def player_params
