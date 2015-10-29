@@ -505,21 +505,25 @@
         1,
         null,
         1,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
         null,
         null,
         1,
         1,
+        1,
+        1,
+        null,
         0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -529,7 +533,7 @@
         1,
         null,
         1,
-        4,
+        5,
         null,
         null,
         1,
@@ -624,6 +628,26 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/Chess/spec/requests/game_functions_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/Chess/spec/requests/player_functions_spec.rb": [
         1,
         null,
@@ -686,6 +710,6 @@
         null
       ]
     },
-    "timestamp": 1446080930
+    "timestamp": 1446081226
   }
 }
