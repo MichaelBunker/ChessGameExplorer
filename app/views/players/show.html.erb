@@ -1,2 +1,5 @@
 <h2>Page for <%= @player.name %></h2>
 <h4>rating: <%= @player.rating %></h4>
+
+
+<h5><%= link_to 'Edit this player', edit_player_path(@player) %></h5>
