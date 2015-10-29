@@ -1,12 +1,17 @@
 class GamesController < ApplicationController
 
   def new
+    @players = Player.all
     @game = Game.new
   end
 
   def create
+    @players = Player.all
     @game = Game.new(game_params)
     if @game.save
+      players = params[:Player]
+      players.each do |player|
+        @game.players.create(name: name, game_id: game_id)
       redirect_to game_path(@game)
     else
       render :new

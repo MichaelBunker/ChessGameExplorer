@@ -4,5 +4,10 @@
     <%= f.text_field :notation, class: "form-control" %>
   </div>
 
+  <% @players.each do |player| %>
+    <%= label_tag player.name %>
+    <%= check_box_tag "User[#{player.name}]", player.name %>
+  <% end %>
+<br>
   <%= f.submit "Add" %>
 <% end %>
