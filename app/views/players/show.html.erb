@@ -4,3 +4,8 @@
 
 <h5><%= link_to 'Edit this player', edit_player_path(@player) %></h5>
 <h5><%= link_to 'Delete this player', player_path(@player), data: {confirm: "Are You Sure?", method: "delete"} %></h5>
+
+
+<% @player.games.each do |game| %>
+  <%= game.notation %>
+<% end %>

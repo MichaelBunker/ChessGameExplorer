@@ -8,19 +8,19 @@ class GamesController < ApplicationController
   def create
     @players = Player.all
     @game = Game.new(game_params)
-    players = params[:Player]
-    players.each do |player|
+    players = params[:player]
     binding.pry
-      @player = Player.new(name: player[0], rating: player[1])
-      @player.save
-      @game.players.push(@player)
+    players.each do |player|
+      @game.players.push(player)
     end
     @game.save
     redirect_to game_path(@game)
   end
 
+
   def show
     @game = Game.find(params[:id])
+
   end
 
   def edit
@@ -47,7 +47,12 @@ private
     params.require(:game).permit(:notation)
   end
 
+  # def player_params
+  #   params.require(:player).permit(:name, :rating)
+  # end
+
+  # Is this messing with how the object is getting dealt with in the form/create method?
   def player_params
-    params.permit(:Player)
+    params.permit(:player)
   end
 end

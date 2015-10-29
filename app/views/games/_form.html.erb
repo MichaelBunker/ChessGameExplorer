@@ -6,7 +6,7 @@
 
   <% @players.each do |player| %>
     <%= label_tag player.name %>
-    <%= check_box_tag "Player[#{player.name}, #{player.rating}]"%>
+    <%= check_box_tag "player[#{player.name}, #{player.rating}]"%>
   <% end %>
 <br>
   <%= f.submit "Add" %>
