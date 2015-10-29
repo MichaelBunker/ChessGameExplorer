@@ -4,6 +4,7 @@ class PlayersController < ApplicationController
 
   def index
     @user = current_user
+    @players = Player.all
   end
 
   def new
@@ -34,6 +35,12 @@ class PlayersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    player = Player.find(params[:id])
+    player.destroy
+    redirect_to players_path
   end
 
 
