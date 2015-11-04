@@ -2,9 +2,13 @@
 <h4>rating: <%= @player.rating %></h4>
 
 
-<h5><%= link_to 'Edit this player', edit_player_path(@player) %></h5>
+<h5><%= link_to 'Edit this player', edit_player_path(@player), id: "edit_player_info", remote: true %></h5>
 <h5><%= link_to 'Delete this player', player_path(@player), data: {confirm: "Are You Sure?", method: "delete"} %></h5>
 
+<br>
+<%= link_to 'Add a new game', new_game_path, id: "new_game", remote: true %>
+<br>
+<br>
 
 <% @player.games.each do |game| %>
   <%= game.notation %>
