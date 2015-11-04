@@ -32,4 +32,5 @@ group :test do
   gem 'simplecov', require: false
   gem 'rack_session_access'
   gem 'capybara'
+  gem 'database_cleaner'
 end
