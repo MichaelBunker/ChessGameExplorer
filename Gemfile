@@ -12,6 +12,9 @@ gem 'hirb'
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'formtastic'
+gem 'wikipedia-client', require: "wikipedia"
+gem 'rest-client'
+gem 'httparty'
 
 group :development do
   gem 'byebug'
