@@ -11,7 +11,7 @@ class StudyController < ApplicationController
     # @images.each do |image|
     @content = @response.text
     # count = @content.scan(/(?=#{"===".downcase()})/).count
-    @content.gsub!(/([===])/, '<br>')
+    @content.gsub!(/([===])/, "<br>")
     # binding.pry
 
   end
