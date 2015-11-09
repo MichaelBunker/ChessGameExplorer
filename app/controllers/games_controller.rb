@@ -34,8 +34,6 @@ class GamesController < ApplicationController
     @players = Player.all
     @game = Game.new(game_params)
     players = Player.find(params[:player_ids])
-
-    binding.pry
     players.each do |player|
       @game.players.push(player)
     end
