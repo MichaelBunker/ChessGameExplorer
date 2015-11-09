@@ -1,0 +1,7 @@
+<%= form_for @study do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <%= f.submit "Search" %>
+<% end %>

@@ -1,4 +1,4 @@
-class StudyController < ApplicationController
+class StudiesController < ApplicationController
 
   def show
 
@@ -12,8 +12,15 @@ class StudyController < ApplicationController
     @content = @response.text
     # count = @content.scan(/(?=#{"===".downcase()})/).count
     @content.gsub!(/([===])/, "<br>")
-    # binding.pry
+  end
 
+  def new
+    @study = Study.new
+  end
+
+private
+  def study_params
+    params.require(:study).permit(:name)
   end
 
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :games
 
-  resources :study
+  resources :studies
 
 
 end
