@@ -24,14 +24,14 @@
         null,
         1,
         1,
+        null,
+        1,
         1,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        18,
+        18,
         null,
         null,
         1,
@@ -614,6 +614,8 @@
         null,
         1,
         null,
+        1,
+        null,
         null,
         null
       ],
@@ -777,6 +779,34 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/project_rails/app/controllers/studies_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/project_rails/app/models/game.rb": [
         1,
         1,
@@ -796,6 +826,11 @@
         1,
         1,
         null,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/project_rails/app/models/study.rb": [
+        1,
         1,
         null
       ],
@@ -821,6 +856,13 @@
         1,
         2,
         2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/project_rails/spec/models/study_spec.rb": [
+        1,
+        null,
+        1,
         2,
         null
       ],
@@ -986,6 +1028,6 @@
         null
       ]
     },
-    "timestamp": 1446653626
+    "timestamp": 1447107330
   }
 }
