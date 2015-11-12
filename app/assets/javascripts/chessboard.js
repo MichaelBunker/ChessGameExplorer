@@ -442,7 +442,7 @@ function expandConfig() {
   if (cfg.hasOwnProperty('pieceTheme') !== true ||
       (typeof cfg.pieceTheme !== 'string' &&
        typeof cfg.pieceTheme !== 'function')) {
-    cfg.pieceTheme = '/wikipedia/{piece}.png';
+    cfg.pieceTheme = 'img/chesspieces/wikipedia/{piece}.png';
   }
 
   // animation speeds
@@ -565,9 +565,13 @@ var buildSquare = function(color, size, id) {
   var html = '<div class="' + CSS.square + ' ' + CSS[color] + '" ' +
   'style="width: ' + size + 'px; height: ' + size + 'px" ' +
   'id="' + id + '">';
+
   if (cfg.showNotation === true) {
+
   }
+
   html += '</div>';
+
   return html;
 };
 */
@@ -1324,6 +1328,7 @@ widget.flip = function() {
 /*
 // TODO: write this, GitHub Issue #5
 widget.highlight = function() {
+
 };
 */
 
