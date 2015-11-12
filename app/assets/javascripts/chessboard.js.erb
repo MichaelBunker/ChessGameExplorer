@@ -442,7 +442,8 @@ function expandConfig() {
   if (cfg.hasOwnProperty('pieceTheme') !== true ||
       (typeof cfg.pieceTheme !== 'string' &&
        typeof cfg.pieceTheme !== 'function')) {
-    cfg.pieceTheme = 'img/chesspieces/wikipedia/{piece}.png';
+    cfg.pieceTheme = '/assets/{piece}.png';
+
   }
 
   // animation speeds
@@ -560,7 +561,7 @@ function buildBoardContainer() {
   return html;
 }
 
-/*
+
 var buildSquare = function(color, size, id) {
   var html = '<div class="' + CSS.square + ' ' + CSS[color] + '" ' +
   'style="width: ' + size + 'px; height: ' + size + 'px" ' +
@@ -574,7 +575,6 @@ var buildSquare = function(color, size, id) {
 
   return html;
 };
-*/
 
 function buildBoard(orientation) {
   if (orientation !== 'black') {
@@ -652,9 +652,10 @@ function buildPieceImgSrc(piece) {
 }
 
 function buildPiece(piece, hidden, id) {
-  var html = '<img src="' + buildPieceImgSrc(piece) + '" ';
+  var pieceAddress = buildPieceImgSrc(piece);
+  var html = '<img src="' + pieceAddress + '" ';
   if (id && typeof id === 'string') {
-    html += 'id="' + id + '" ';
+    html += ' id="' + id + '" ';
   }
   html += 'alt="" ' +
   'class="' + CSS.piece + '" ' +
@@ -665,6 +666,8 @@ function buildPiece(piece, hidden, id) {
     html += 'display:none;';
   }
   html += '" />';
+
+  // debugger;
 
   return html;
 }
