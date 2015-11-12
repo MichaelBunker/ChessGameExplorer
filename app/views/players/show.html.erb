@@ -27,18 +27,6 @@
 <p>FEN: <span id="fen"></span></p>
 <p>PGN: <span id="pgn"></span></p>
 
-<script>
-
-// var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
-// var board1 = ChessBoard('board1', ruyLopez);
-
-  var cfg = {
-    position: 'start',
-    draggable: true,
-    dropOffBoard: 'trash',
-    };
-  var board1 = ChessBoard('board1', cfg);
-
-  $('#startBtn').on('click', board1.start);
-  $('#clearBtn').on('click', board1.clear);
-</script>
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= image_tag "bK.png" %>
