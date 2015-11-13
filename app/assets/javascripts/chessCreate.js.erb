@@ -1,98 +1,86 @@
 // var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
 // var board1 = ChessBoard('board1', ruyLopez);
 
-// var cfg = {
-//   position: 'start',
-//   draggable: true,
-//   dropOffBoard: 'trash',
-// };
-// var board = ChessBoard('board1', cfg);
-//
-// $('#startBtn').on('click', board.start);
-// $('#clearBtn').on('click', board.clear);
-
-
 var board = ChessBoard('board', cfg);
 
 $('#startBtn').on('click', board.start);
 $('#clearBtn').on('click', board.clear);
-
 var board,
-game = new Chess(),
-statusEl = $('#status'),
-fenEl = $('#fen'),
-pgnEl = $('#pgn');
+  game = new Chess();
 
-// do not pick up pieces if the game is over
-// only pick up pieces for the side to move
-var onDragStart = function(source, piece, position, orientation) {
+var removeGreySquares = function() {
+  $('#board .square-55d63').css('background', '');
+};
+
+var greySquare = function(square) {
+  var squareEl = $('#board .square-' + square);
+
+  var background = '#a9a9a9';
+  if (squareEl.hasClass('black-3c85d') === true) {
+    background = '#696969';
+  }
+
+  squareEl.css('background', background);
+};
+
+var onDragStart = function(source, piece) {
+  // do not pick up pieces if the game is over
+  // or if it's not that side's turn
   if (game.game_over() === true ||
-    (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-    (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
-      return false;
-    }
-  };
+      (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
+      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+    return false;
+  }
+};
 
-  var onDrop = function(source, target) {
-    // see if the move is legal
-    var move = game.move({
-      from: source,
-      to: target,
-      promotion: 'q' // NOTE: always promote to a queen for example simplicity
-    });
+var onDrop = function(source, target) {
+  removeGreySquares();
 
-    // illegal move
-    if (move === null) return 'snapback';
+  // see if the move is legal
+  var move = game.move({
+    from: source,
+    to: target,
+    promotion: 'q' // NOTE: always promote to a queen for example simplicity
+  });
 
-    updateStatus();
-  };
+  // illegal move
+  if (move === null) return 'snapback';
+};
 
-  // update the board position after the piece snap
-  // for castling, en passant, pawn promotion
-  var onSnapEnd = function() {
-    board.position(game.fen());
-  };
+var onMouseoverSquare = function(square, piece) {
+  // get list of possible moves for this square
+  var moves = game.moves({
+    square: square,
+    verbose: true
+  });
 
-  var updateStatus = function() {
-    var status = '';
+  // exit if there are no moves available for this square
+  if (moves.length === 0) return;
 
-    var moveColor = 'White';
-    if (game.turn() === 'b') {
-      moveColor = 'Black';
-    }
+  // highlight the square they moused over
+  greySquare(square);
 
-    // checkmate?
-    if (game.in_checkmate() === true) {
-      status = 'Game over, ' + moveColor + ' is in checkmate.';
-    }
+  // highlight the possible squares for this piece
+  for (var i = 0; i < moves.length; i++) {
+    greySquare(moves[i].to);
+  }
+};
 
-    // draw?
-    else if (game.in_draw() === true) {
-      status = 'Game over, drawn position';
-    }
+var onMouseoutSquare = function(square, piece) {
+  removeGreySquares();
+};
 
-    // game still on
-    else {
-      status = moveColor + ' to move';
+var onSnapEnd = function() {
+  board.position(game.fen());
+};
 
-      // check?
-      if (game.in_check() === true) {
-        status += ', ' + moveColor + ' is in check';
-      }
-    }
-
-    statusEl.html(status);
-    fenEl.html(game.fen());
-    pgnEl.html(game.pgn());
-  };
-
-  var cfg = {
-    draggable: true,
-    position: 'start',
-    onDragStart: onDragStart,
-    onDrop: onDrop,
-    onSnapEnd: onSnapEnd
-  };
-  board = ChessBoard('board', cfg);
-
-  updateStatus();
+var cfg = {
+  draggable: true,
+  position: 'start',
+  onDragStart: onDragStart,
+  onDrop: onDrop,
+  onMouseoutSquare: onMouseoutSquare,
+  onMouseoverSquare: onMouseoverSquare,
+  onSnapEnd: onSnapEnd
+};
+board = ChessBoard('board', cfg);
