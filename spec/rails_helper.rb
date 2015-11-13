@@ -33,12 +33,3 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-#
-# module FeatureHelpers
-#   def logged_as(user)
-#     page.set_rack_session('warden.user.user.key' => User.serialize_into_session(user).unshift("User"))
-#   end
-# end
-# DO MORE RESEARCH
-# Look into https://github.com/kylemellander/would-you-rather-/blob/master/spec/features/index_functions_spec.rb
-# Want to get Rack_session working for better testing coverage

@@ -5,18 +5,9 @@ class StudiesController < ApplicationController
     name = @study.name
     @study_info = Wikipedia.find(name)
     @study_page = @study_info.text
+    # == on wiki is header, === subheader.
     @study_page.gsub!(/([===])/, "<br>")
   end
-
-#   def index
-# # == on wiki is header, === subheader.
-#     @response = Wikipedia.find('Pawn_structure')
-#     # @images = @response.image_urls
-#     # @images.each do |image|
-#     @content = @response.text
-#     # count = @content.scan(/(?=#{"===".downcase()})/).count
-#     @content.gsub!(/([===])/, "<br>")
-#   end
 
   def new
     @study = Study.new

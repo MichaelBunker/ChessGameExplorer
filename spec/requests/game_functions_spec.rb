@@ -24,6 +24,7 @@ RSpec.describe "GameFunctions", type: :request do
   describe 'the edit game process' do
     it 'Edits a game' do
       click_link "Add a new game"
+      # same thing as player function testing.
       fill_in "Notation", with: "1.e4e5 2.nf3nc6"
       click_on "Add"
       click_on "Edit this game"

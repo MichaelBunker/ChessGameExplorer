@@ -29,6 +29,7 @@ RSpec.describe "PlayerFunctions", type: :request do
       fill_in "Rating", with: "2000"
       click_on "Add"
       click_on "Edit this player"
+      # player.Create, test each route only once.
       fill_in "Name", with: "Bob"
       fill_in "Rating", with: "1000"
       click_on "Add"

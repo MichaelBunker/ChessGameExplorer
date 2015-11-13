@@ -44,15 +44,6 @@
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/Guest/Desktop/project_rails/config/environment.rb": [
@@ -1035,6 +1026,6 @@
         null
       ]
     },
-    "timestamp": 1447113052
+    "timestamp": 1447373044
   }
 }
