@@ -2,9 +2,13 @@
 // var board1 = ChessBoard('board1', ruyLopez);
 
 var board = ChessBoard('board', cfg);
-
+statusEl = $('#status'),
+fenEl = $('#fen'),
+pgnEl = $('#pgn');
 $('#startBtn').on('click', board.start);
 $('#clearBtn').on('click', board.clear);
+
+
 var board,
   game = new Chess();
 
@@ -45,6 +49,7 @@ var onDrop = function(source, target) {
 
   // illegal move
   if (move === null) return 'snapback';
+  updateStatus();
 };
 
 var onMouseoverSquare = function(square, piece) {
@@ -74,6 +79,39 @@ var onSnapEnd = function() {
   board.position(game.fen());
 };
 
+var updateStatus = function() {
+  var status = '';
+
+  var moveColor = 'White';
+  if (game.turn() === 'b') {
+    moveColor = 'Black';
+  }
+
+  // checkmate?
+  if (game.in_checkmate() === true) {
+    status = 'Game over, ' + moveColor + ' is in checkmate.';
+  }
+
+  // draw?
+  else if (game.in_draw() === true) {
+    status = 'Game over, drawn position';
+  }
+
+  // game still on
+  else {
+    status = moveColor + ' to move';
+
+    // check?
+    if (game.in_check() === true) {
+      status += ', ' + moveColor + ' is in check';
+    }
+  }
+
+  statusEl.html(status);
+  fenEl.html(game.fen());
+  pgnEl.html(game.pgn());
+};
+
 var cfg = {
   draggable: true,
   position: 'start',
@@ -84,3 +122,5 @@ var cfg = {
   onSnapEnd: onSnapEnd
 };
 board = ChessBoard('board', cfg);
+
+updateStatus();
