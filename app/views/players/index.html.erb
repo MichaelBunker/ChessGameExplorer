@@ -1,8 +1,19 @@
 <% if user_signed_in? %>
-  <h2>Hello World!</h2>
-<% end %>
 
+<div id="board" style="width: 400px"></div>
+<input type="button" id="startBtn" value="Start" />
+<input type="button" id="clearBtn" value="Clear" />
+<p>Status: <span id="status"></span></p>
+<p>FEN: <span id="fen"></span></p>
+<p>PGN: <span id="pgn"></span></p>
+
+<% end %>
+<br><br>
 
 <% @players.each do |player| %>
   <%= link_to player.name, player_path(player) %> <br>
 <% end %>
+
+
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
