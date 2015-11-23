@@ -1,2 +1,15 @@
-$("#new_game_link").hide()
-$("#show_game_link").append('<%= j render("form") %>')
+var pgn = game.pgn();
+$('#game_save_form').append('<%= j render("form") %>')
+$('#game_notation_form').val(pgn)
+
+// console.log(game.pgn());
+// var notation = game.pgn();
+// debugger
+// $.ajax({
+//     url: "/games",
+//     type: "POST",
+//     data: {notation: notation}
+//     success: function() {
+//       console.log(arguments)
+//     },
+// });

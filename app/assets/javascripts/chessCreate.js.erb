@@ -124,3 +124,8 @@ var cfg = {
 board = ChessBoard('board', cfg);
 
 updateStatus();
+function clickGetPositionBtn() {
+  console.log(game.pgn());
+}
+
+$('#getPositionBtn').on('click', clickGetPositionBtn);

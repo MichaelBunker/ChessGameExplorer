@@ -1,9 +1,8 @@
 <%= form_for @game do |f| %>
   <div class="form-group">
     <%= f.label :notation %>
-    <%= f.text_field :notation, class: "form-control" %>
+    <%= f.text_field :notation, class: "form-control", id: "game_notation_form" %>
   </div>
-
 
   <% @players.each do |player| %>
     <%= label_tag player.name %>

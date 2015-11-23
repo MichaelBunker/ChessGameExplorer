@@ -6,14 +6,17 @@
 <p>Status: <span id="status"></span></p>
 <p>FEN: <span id="fen"></span></p>
 <p>PGN: <span id="pgn"></span></p>
-
+<!-- <input type="button" id="getPositionBtn" value="Show position in console"> -->
+<%= link_to "Save Game", new_game_path, class: "btn btn-default", id: "save_game_board", remote: true %>
 <% end %>
+
+<div id="game_save_form"></div>
+
 <br><br>
 
 <% @players.each do |player| %>
   <%= link_to player.name, player_path(player) %> <br>
 <% end %>
-
 
 <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>

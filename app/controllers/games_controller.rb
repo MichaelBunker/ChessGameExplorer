@@ -5,6 +5,15 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  # def create
+  #   @game = Game.new params['notation']
+  #   if @game.save
+  #     render :json => {}
+  #   else
+  #     render :json => {}, status => 500
+  #   end
+  # end
+
   def create
     @players = Player.all
     @game = Game.new(game_params)
