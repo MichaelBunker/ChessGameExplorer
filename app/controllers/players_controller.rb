@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   def index
     @user = current_user
     @players = Player.all
+    @games = Game.all
   end
 
   def new

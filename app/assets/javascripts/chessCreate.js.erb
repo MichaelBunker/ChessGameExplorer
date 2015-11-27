@@ -1,16 +1,13 @@
 // var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
 // var board1 = ChessBoard('board1', ruyLopez);
 
-var board = ChessBoard('board', cfg);
-statusEl = $('#status'),
-fenEl = $('#fen'),
-pgnEl = $('#pgn');
-$('#startBtn').on('click', board.start);
-$('#clearBtn').on('click', board.clear);
 
 
 var board,
   game = new Chess();
+  statusEl = $('#status'),
+  fenEl = $('#fen'),
+  pgnEl = $('#pgn');
 
 var removeGreySquares = function() {
   $('#board .square-55d63').css('background', '');
@@ -122,8 +119,8 @@ var cfg = {
   onSnapEnd: onSnapEnd
 };
 board = ChessBoard('board', cfg);
+$('#startBtn').on('click', board.start);
+$('#clearBtn').on('click', board.clear);
+
 
 updateStatus();
-function clickGetPositionBtn() {
-  console.log(game.pgn());
-}

@@ -19,3 +19,8 @@
 
 <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "chessCreate.js", "data-turbolinks-track" => true %>
+
+
+<%= @games.length %>
+
+<%= @games.where("notation like ?", "%1. e4%").length %>
