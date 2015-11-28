@@ -8,7 +8,6 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'hirb'
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'formtastic'
@@ -27,6 +26,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'pry'
+  gem 'hirb'
   gem 'factory_girl_rails'
 end
 
