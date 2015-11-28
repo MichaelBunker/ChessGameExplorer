@@ -1,10 +1,8 @@
-// var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
-// var board1 = ChessBoard('board1', ruyLopez);
-var board,
-  game = new Chess();
-  statusEl = $('#status'),
-  fenEl = $('#fen'),
-  pgnEl = $('#pgn');
+
+var game = new Chess();
+statusEl = $('#status'),
+fenEl = $('#fen'),
+pgnEl = $('#pgn');
 
 var removeGreySquares = function() {
   $('#board .square-55d63').css('background', '');
@@ -20,8 +18,7 @@ var greySquare = function(square) {
 };
 
 var onDragStart = function(source, piece) {
-  // do not pick up pieces if the game is over
-  // or if it's not that side's turn
+  // do not pick up pieces if the game is over or if it's not that side's turn
   if (game.game_over() === true ||
       (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
       (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
@@ -35,7 +32,7 @@ var onDrop = function(source, target) {
   var move = game.move({
     from: source,
     to: target,
-    promotion: 'q' // NOTE: always promote to a queen for example simplicity
+    promotion: 'q' // promote to a queen for example simplicity
   });
   // illegal move
   if (move === null) return 'snapback';
@@ -102,9 +99,11 @@ var cfg = {
   onMouseoverSquare: onMouseoverSquare,
   onSnapEnd: onSnapEnd
 };
-board = ChessBoard('board', cfg);
-$('#startBtn').on('click', board.start);
-$('#clearBtn').on('click', board.clear);
 
-
-updateStatus();
+var board = ChessBoard('board', cfg);
+$('#startBtn').on('click', function() {
+  board.start();
+  var game = new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+  updateStatus();
+});
+$('#clearBtn').on('click', game.reset());
