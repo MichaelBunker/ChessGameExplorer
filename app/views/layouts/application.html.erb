@@ -8,8 +8,7 @@
 </head>
 <body>
 
-  <div class="container">
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -35,7 +34,25 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
+  <div class="container">
+  <div id='cssmenu'>
+  <ul>
+    <%= yield(:class) %>
+     <li class='<%= yield(:index_active)%>'><%= link_to "Chess", root_path %></a></li>
+     <% if user_signed_in? %>
+       <li class='<%= yield(:edit_profile_active)%>' ><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+       <li><%= link_to 'Logout', destroy_user_session_path, method: 'delete' %></li>
+       <li class='<%= yield(:new_game_active)%>' ><%= link_to 'Add a new game', new_game_path %></li>
+       <li class='<%= yield(:new_player_active)%>' ><%= link_to 'Add a new Player', new_player_path %></li>
+       <li class='<%= yield(:new_study_active)%>' ><%= link_to 'Study', new_study_path %></li>
+     <% else %>
+     <li class='<%= yield(:new_player_active)%>' ><%= link_to 'Login', new_user_session_path %></li>
+     <li class='<%= yield(:new_player_active)%>' ><%= link_to 'Sign Up', new_user_registration_path %></li>
+     <% end %>
+  </ul>
+  </div>
+
 
     <%= yield %>
   </div>

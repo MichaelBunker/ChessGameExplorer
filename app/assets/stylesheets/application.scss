@@ -17,3 +17,11 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ html {
+     height: 100%;
+     margin: 0px;
+ }
+ body {
+   background-color: #393939;
+   height: 100%;
+ }

@@ -106,4 +106,4 @@ $('#startBtn').on('click', function() {
   var game = new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
   updateStatus();
 });
-$('#clearBtn').on('click', game.reset());
+$('#clearBtn').on('click', board.clear);
