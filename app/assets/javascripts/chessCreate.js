@@ -101,16 +101,25 @@ var cfg = {
 };
 
 var board = ChessBoard('board', cfg);
+
 $('#startBtn').on('click', function() {
   board.start();
   var game = new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
   updateStatus();
 });
-$('#clearBtn').on('click', function () {
+
+$('#clearBtn').on('click', function() {
   board.start();
   board.clear();
   game.reset();
   statusEl.html("");
   fenEl.html("");
   pgnEl.html("");
+});
+
+$('#undoBtn').on('click', function() {
+  game.undo();
+  var fen = game.fen();
+  board.position(fen);
+  updateStatus();
 });
