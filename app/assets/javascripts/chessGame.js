@@ -38,13 +38,11 @@ $('#undoBtn').on('click', function() {
 });
 $('#moveBtn').on('click', function() {
 // this gets me the first move. need to figure out best way to loop through array.
-// maybe deleting element after it is used? Splice removes entire array, might be an issue with chess.js library.
+// maybe deleting element after it is used? This works, but doesn't save the pgn globally, meaning it sees the full pgn each tmie button is clicked. Need to play around with this to figure out best solution.
   gameHistory.load_pgn(pgn);
   var moves = gameHistory.history();
   game.move(moves[0]);
-  debugger;
   fen = game.fen();
   board.position(fen);
-  moves.splice(0)
-  debugger;
+  moves.splice(0,1)
 });
