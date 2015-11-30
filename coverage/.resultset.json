@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/project_rails/spec/models/game_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/models/game_spec.rb": [
         1,
         null,
         1,
@@ -9,7 +9,7 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/rails_helper.rb": [
+      "/home/bunker/Desktop/project_rails/spec/rails_helper.rb": [
         1,
         1,
         null,
@@ -46,14 +46,14 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/environment.rb": [
+      "/home/bunker/Desktop/project_rails/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/project_rails/config/application.rb": [
+      "/home/bunker/Desktop/project_rails/config/application.rb": [
         1,
         null,
         1,
@@ -90,12 +90,12 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/boot.rb": [
+      "/home/bunker/Desktop/project_rails/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/Guest/Desktop/project_rails/config/environments/test.rb": [
+      "/home/bunker/Desktop/project_rails/config/environments/test.rb": [
         1,
         null,
         null,
@@ -142,34 +142,35 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/assets.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/assets.rb": [
         null,
         null,
         null,
+        1,
+        1,
         1,
         null,
         null,
         null,
         null,
         null,
+        null
+      ],
+      "/home/bunker/Desktop/project_rails/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/backtrace_silencers.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/cookies_serializer.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/devise.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -433,13 +434,13 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/filter_parameter_logging.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/formtastic.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/formtastic.rb": [
         null,
         null,
         null,
@@ -551,7 +552,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/inflections.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -569,18 +570,18 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/mime_types.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/session_store.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/project_rails/config/initializers/wrap_parameters.rb": [
+      "/home/bunker/Desktop/project_rails/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -596,7 +597,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/config/routes.rb": [
+      "/home/bunker/Desktop/project_rails/config/routes.rb": [
         1,
         1,
         null,
@@ -610,7 +611,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/models/user.rb": [
+      "/home/bunker/Desktop/project_rails/app/models/user.rb": [
         1,
         null,
         null,
@@ -618,18 +619,18 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/controllers/application_controller.rb": [
+      "/home/bunker/Desktop/project_rails/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/helpers/application_helper.rb": [
+      "/home/bunker/Desktop/project_rails/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/controllers/games_controller.rb": [
+      "/home/bunker/Desktop/project_rails/app/controllers/games_controller.rb": [
         1,
         null,
         1,
@@ -637,35 +638,10 @@
         3,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
-        3,
-        3,
-        3,
+        0,
+        0,
+        0,
         0,
         0,
         null,
@@ -699,26 +675,18 @@
         null,
         null,
         1,
-        1,
-        3,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         0,
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/controllers/players_controller.rb": [
+      "/home/bunker/Desktop/project_rails/app/controllers/players_controller.rb": [
         1,
         null,
         1,
         null,
         1,
+        12,
         12,
         12,
         null,
@@ -768,7 +736,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/controllers/studies_controller.rb": [
+      "/home/bunker/Desktop/project_rails/app/controllers/studies_controller.rb": [
         1,
         null,
         1,
@@ -776,17 +744,8 @@
         0,
         0,
         0,
+        null,
         0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         1,
@@ -805,7 +764,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/models/game.rb": [
+      "/home/bunker/Desktop/project_rails/app/models/game.rb": [
         1,
         1,
         null,
@@ -813,13 +772,13 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/models/match.rb": [
+      "/home/bunker/Desktop/project_rails/app/models/match.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/models/player.rb": [
+      "/home/bunker/Desktop/project_rails/app/models/player.rb": [
         1,
         1,
         1,
@@ -827,12 +786,12 @@
         1,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/app/models/study.rb": [
+      "/home/bunker/Desktop/project_rails/app/models/study.rb": [
         1,
         1,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/factories.rb": [
+      "/home/bunker/Desktop/project_rails/spec/factories.rb": [
         1,
         1,
         1,
@@ -841,14 +800,14 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/models/match_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/models/match_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/models/player_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/models/player_spec.rb": [
         1,
         null,
         1,
@@ -857,14 +816,14 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/models/study_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/models/study_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/models/user_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -885,7 +844,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/requests/game_functions_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/requests/game_functions_spec.rb": [
         1,
         null,
         1,
@@ -904,7 +863,20 @@
         null,
         1,
         1,
+        0,
+        0,
+        null,
+        null,
+        null,
         1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
         0,
         null,
         null,
@@ -915,18 +887,6 @@
         1,
         1,
         0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         0,
         0,
         null,
@@ -934,7 +894,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/requests/player_functions_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/requests/player_functions_spec.rb": [
         1,
         null,
         1,
@@ -966,6 +926,7 @@
         1,
         1,
         1,
+        null,
         1,
         1,
         1,
@@ -986,7 +947,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/project_rails/spec/requests/user_accounts_spec.rb": [
+      "/home/bunker/Desktop/project_rails/spec/requests/user_accounts_spec.rb": [
         1,
         null,
         1,
@@ -1026,6 +987,6 @@
         null
       ]
     },
-    "timestamp": 1447373044
+    "timestamp": 1448854658
   }
 }

@@ -106,4 +106,11 @@ $('#startBtn').on('click', function() {
   var game = new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
   updateStatus();
 });
-$('#clearBtn').on('click', board.clear);
+$('#clearBtn').on('click', function () {
+  board.start();
+  board.clear();
+  game.reset();
+  statusEl.html("");
+  fenEl.html("");
+  pgnEl.html("");
+});
