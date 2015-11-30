@@ -2,8 +2,8 @@
 // gameHistory gets this pgn of the game we want to study.
 var game = new Chess();
 var gameHistory = new Chess();
-var pgn = $('#ind_game_pgn').text();
 gameHistory.load_pgn(pgn);
+var pgn = $('#ind_game_pgn').text();
 var moves = gameHistory.history();
 var cfg = {
   draggable: true,
@@ -18,8 +18,6 @@ var cfg = {
 var board = ChessBoard('show_game_board', cfg);
 
 $('#startBtn').on('click', function() {
-  // fen = game.fen()
-  // board.position(fen)
   board.start();
 });
 
@@ -38,8 +36,6 @@ $('#undoBtn').on('click', function() {
   board.position(fen);
 });
 $('#moveBtn').on('click', function() {
-// this gets me the first move. need to figure out best way to loop through array.
-// maybe deleting element after it is used? This works, but doesn't save the pgn globally, meaning it sees the full pgn each time button is clicked. Need to play around with this to figure out best solution.
   game.move(moves[0]);
   fen = game.fen();
   board.position(fen);
