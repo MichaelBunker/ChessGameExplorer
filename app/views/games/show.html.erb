@@ -1,5 +1,14 @@
-<h3>Game notation: <%= @game.notation %></h3>
+<div id="ind_game_pgn"><%= @game.notation %></div>
+<div id="show_game_board"></div>
+<div class="well well-sm">
+  <input type="button" id="startBtn" value="Start">
+  <input type="button" id="clearBtn" value="Clear">
+  <input type="button" id="undoBtn" value="Undo">
+  <input type="button" id="moveBtn" value="Move">
+</div>
 
 
 <h5><%= link_to 'Edit this game', edit_game_path(@game) %></h5>
 <h5><%= link_to 'Delete this game', game_path(@game), data: {confirm: "Are You Sure?", method: "delete"} %></h5>
+
+<%= javascript_include_tag "chessGame.js", "data-turbolinks-track" => true %>

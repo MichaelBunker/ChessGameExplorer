@@ -15,5 +15,5 @@
 <br>
 
 <% @player.games.each do |game| %>
-  <%= game.notation %>
+  <%= link_to game.notation, game_path(game) %>
 <% end %>

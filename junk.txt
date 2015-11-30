@@ -1,4 +1,1 @@
-<% @players.each do |player| %>
-  <%= label_tag player.name %>
-  <%= check_box_tag "player_ids[]", player.id %>
-<% end %>
+#393939, #FFS(5)A09, #F3843E, #6e6e6e
