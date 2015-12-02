@@ -7,7 +7,9 @@ class PlayersController < ApplicationController
     @user = current_user
     @players = Player.all
     pgn = params[:game_pgn]
-    @games = Game.where("notation = '#{pgn}'")
+    # ('keywords LIKE ?', '%crescent%').all
+    # @games = Game.where("notation = '#{pgn}'")
+    @games = Game.where("notation LIKE ?", "%#{pgn}%")
     respond_with do |format|
       format.html
       format.json { render :json => @games }
