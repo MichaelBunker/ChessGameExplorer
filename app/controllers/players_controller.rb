@@ -9,13 +9,20 @@ class PlayersController < ApplicationController
     pgn = params[:game_pgn]
     moves = params[:moves]
     if moves
-      @games = Game.where("notation LIKE ?", "#{pgn} d5")
-      # @games.where("notation LIKE ?", "#{pgn} d5")
-      @d5 = @games.where(notation = pgn + d5)
-
+      @games = Game.where("notation LIKE ?", "#{pgn}%")
+      @d5 = @games.where("notation LIKE ?", "#{pgn} d5%")
+      @arr = []
+      moves.each do |move|
+        number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
+        if number == 0
+          @arr << 0
+        else
+          @arr << number.length
+        end
+      end
       respond_with do |format|
         format.html
-        format.json { render :json => moves }
+        format.json { render :json => {"moves": moves, "next_move": @arr} }
       end
     end
 
