@@ -1,11 +1,19 @@
 class PlayersController < ApplicationController
 
   before_action :authenticate_user!
+  respond_to :js, :json, :html
 
   def index
     @user = current_user
     @players = Player.all
     @games = Game.all
+    respond_with do
+      moves = params[:moves]
+      moves.map.with_index do |x|
+        
+      end
+    end
+
   end
 
   def new

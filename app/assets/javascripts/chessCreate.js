@@ -37,6 +37,16 @@ var onDrop = function(source, target) {
   // illegal move
   if (move === null) return 'snapback';
   updateStatus();
+  // AJAX request to get moves list to controller.
+  var moves = game.moves();
+  $.ajax({
+      type: "GET",
+      url: "/players",
+      data: {moves},
+      success: function() {
+        console.log('success')
+      }
+    })
 };
 
 var onMouseoverSquare = function(square, piece) {

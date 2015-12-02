@@ -2,8 +2,8 @@
 // gameHistory gets this pgn of the game we want to study.
 var game = new Chess();
 var gameHistory = new Chess();
-gameHistory.load_pgn(pgn);
 var pgn = $('#ind_game_pgn').text();
+gameHistory.load_pgn(pgn);
 var moves = gameHistory.history();
 var cfg = {
   draggable: true,
