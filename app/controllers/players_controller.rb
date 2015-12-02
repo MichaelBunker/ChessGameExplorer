@@ -7,17 +7,18 @@ class PlayersController < ApplicationController
     @user = current_user
     @players = Player.all
     pgn = params[:game_pgn]
-    # ('keywords LIKE ?', '%crescent%').all
-    # @games = Game.where("notation = '#{pgn}'")
-    @games = Game.where("notation LIKE ?", "%#{pgn}%")
-    respond_with do |format|
-      format.html
-      format.json { render :json => @games }
+    moves = params[:moves]
+    if moves
+      @games = Game.where("notation LIKE ?", "#{pgn} d5")
+      # @games.where("notation LIKE ?", "#{pgn} d5")
+      @d5 = @games.where(notation = pgn + d5)
+
+      respond_with do |format|
+        format.html
+        format.json { render :json => moves }
+      end
     end
-    # @moves = params[:moves]
-    # @moves.each do |move|
-    #   result = Game.where("notation like ?", "%1. e4%")
-    # end
+
   end
 
   def new

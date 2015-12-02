@@ -15,8 +15,26 @@
 <div id="game_save_form"></div>
 </div>
 <br><br>
-<div id="db_display">
+<div id="db_display"></div>
+<div class="well well-lg">
+  <h2>Game Database</h2>
+    <table class="table-index">
+      <thead>
+        <tr>
+          <th>Moves</th>
+          <th># of Games</th>
 
+        </tr>
+      </thead>
+      <tbody id="moves_display">
+        <tr>
+          <td>first</td>
+          <td>second</td>
+          <td>example</td>
+        </tr>
+
+      </tbody>
+    </table>
 </div>
 <br>
 <% @players.each do |player| %>

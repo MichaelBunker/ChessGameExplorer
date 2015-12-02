@@ -37,17 +37,25 @@ var onDrop = function(source, target) {
   // illegal move
   if (move === null) return 'snapback';
   updateStatus();
-  // AJAX request to get moves list to controller.
+  // AJAX request for games from DB
   var moves = game.moves();
   var game_pgn = game.pgn();
   $.ajax({
       type: "GET",
       url: "/players",
-      data: {game_pgn},
+      data: {game_pgn, moves},
       dataType: 'json',
       success: function(json, responseText, jqXHR) {
-        console.log(json.length);
-        $('#db_display').text("Games with this position in DB: " + json.length )
+      console.log('success')
+        // $('#db_display').text("Games with this position in DB: " + json.length )
+        // $('#moves_display').text("possible moves " + moves )
+        // $('#moves_display').text("games with " + moves[1] + " " + json.length )
+        $('#moves_display').text("")
+        moveNumber = json.length
+        for (var i = 0; i < moveNumber; i++) {
+          $('#moves_display').append("<tr> <td> " + json[0] + "</td> </tr>" )
+          json.splice(0,1)
+        }
       }
     })
 };
