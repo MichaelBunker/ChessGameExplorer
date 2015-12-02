@@ -6,14 +6,16 @@ class PlayersController < ApplicationController
   def index
     @user = current_user
     @players = Player.all
-    @games = Game.all
-    respond_with do
-      moves = params[:moves]
-      moves.map.with_index do |x|
-        
-      end
+    pgn = params[:game_pgn]
+    @games = Game.where("notation = '#{pgn}'")
+    respond_with do |format|
+      format.html
+      format.json { render :json => @games }
     end
-
+    # @moves = params[:moves]
+    # @moves.each do |move|
+    #   result = Game.where("notation like ?", "%1. e4%")
+    # end
   end
 
   def new

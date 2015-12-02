@@ -15,7 +15,10 @@
 <div id="game_save_form"></div>
 </div>
 <br><br>
+<div id="db_display">
 
+</div>
+<br>
 <% @players.each do |player| %>
   <%= link_to player.name, player_path(player) %> <br>
 <% end %>

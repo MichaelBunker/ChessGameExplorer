@@ -32,19 +32,22 @@ var onDrop = function(source, target) {
   var move = game.move({
     from: source,
     to: target,
-    promotion: 'q' // promote to a queen for example simplicity
+    promotion: 'q'
   });
   // illegal move
   if (move === null) return 'snapback';
   updateStatus();
   // AJAX request to get moves list to controller.
   var moves = game.moves();
+  var game_pgn = game.pgn();
   $.ajax({
       type: "GET",
       url: "/players",
-      data: {moves},
-      success: function() {
-        console.log('success')
+      data: {game_pgn},
+      dataType: 'json',
+      success: function(json, responseText, jqXHR) {
+        console.log(json.length);
+        $('#db_display').text("Games with this position in DB: " + json.length )
       }
     })
 };
@@ -57,7 +60,6 @@ var onMouseoverSquare = function(square, piece) {
   });
   // exit if there are no moves available for this square
   if (moves.length === 0) return;
-  // highlight the square they moused over
   greySquare(square);
   // highlight the possible squares for this piece
   for (var i = 0; i < moves.length; i++) {
