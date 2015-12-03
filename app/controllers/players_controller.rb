@@ -11,9 +11,26 @@ class PlayersController < ApplicationController
     if moves
       @games = Game.where("notation LIKE ?", "#{pgn}%")
       @arr = []
-      # need to do regex to find number and add to pgn the next number and append it to pgn string.
+      if pgn.include?("1. e4")
+        if pgn == "1. e4"
+          moves.each do |move|
+            number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
+            if number == 0
+              @arr << 0
+            else
+              @arr << number.length
+            end
+          end
+        end
+        # I think a better solution to all of this might be to pass in which color turn it is. If white's turn, search and add number. Since black will already have it in the string.
+        number = pgn.scan(/\d\./)
+        convert = number.last.to_i
+        addToGame = convert + 1
+        newStringNum = addToGame.to_s
+        pgn.concat(" " + newStringNum + ". ")
+      end
       moves.each do |move|
-        number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
+          number = @games.where("notation LIKE ?", "#{pgn}#{move}%")
         if number == 0
           @arr << 0
         else
