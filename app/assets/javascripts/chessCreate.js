@@ -47,6 +47,7 @@ var onDrop = function(source, target) {
       dataType: 'json',
       success: function(json, responseText, jqXHR) {
         console.log(json)
+        debugger
         // $('#db_display').text("Games with this position in DB: " + json.length )
         // $('#moves_display').text("possible moves " + moves )
         // $('#moves_display').text("games with " + moves[1] + " " + json.length )
