@@ -8,11 +8,12 @@ class PlayersController < ApplicationController
     @players = Player.all
     pgn = params[:game_pgn]
     moves = params[:moves]
+    turn = params[:turn]
+    # ruby string method (strip) Normalize the pgn data before it enters controller, and then manipulate it in here to have spaces.
     if moves
       @games = Game.where("notation LIKE ?", "#{pgn}%")
       @moves_a = []
-      if pgn.include?("1. e4")
-        if pgn == "1. e4"
+      if pgn == "1. e4"
           moves.each do |move|
             number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
             if number == 0
@@ -21,19 +22,18 @@ class PlayersController < ApplicationController
               @moves_a << number.length
             end
           end
-        end
-        # I think a better solution to all of this might be to pass in which color turn it is. If white's turn, search and add number. Since black will already have it in the string.
-        #bug where second move by black is caught in this section.
-        # IE. (notation LIKE '1. e4 d5 2. exd5 3. Qxd5%') instead of (notation LIKE '1. e4 d5 2. exd5 Qxd5%')
+      end
+      # pry
+      if turn == 'w'
         number = pgn.scan(/\d\./)
         convert = number.last.to_i
         addToGame = convert + 1
         newStringNum = addToGame.to_s
         pgn.concat(" " + newStringNum + ". ")
-        pry
       end
+      # pry
       moves.each do |move|
-          number = @games.where("notation LIKE ?", "#{pgn}#{move}%")
+          number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
         if number == 0
           @moves_a << 0
         else

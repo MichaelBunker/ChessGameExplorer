@@ -40,17 +40,14 @@ var onDrop = function(source, target) {
   // AJAX request for games from DB
   var moves = game.moves();
   var game_pgn = game.pgn();
+  var turn = game.turn();
   $.ajax({
       type: "GET",
       url: "/players",
-      data: {game_pgn, moves},
+      data: {game_pgn, moves, turn},
       dataType: 'json',
       success: function(json, responseText, jqXHR) {
         console.log(json)
-        debugger
-        // $('#db_display').text("Games with this position in DB: " + json.length )
-        // $('#moves_display').text("possible moves " + moves )
-        // $('#moves_display').text("games with " + moves[1] + " " + json.length )
         $('#moves_display').text("")
         moveNumber = json.moves.length
         for (var i = 0; i < moveNumber; i++) {
