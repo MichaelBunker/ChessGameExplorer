@@ -8,12 +8,20 @@ class GamesController < ApplicationController
   def create
     @players = Player.all
     @game = Game.new(game_params)
-    players = Player.find(params[:player_ids])
-    players.each do |player|
-      @game.players.push(player)
+    if params[:player_ids]
+      players = Player.find(params[:player_ids])
+      players.each do |player|
+        @game.players.push(player)
+      end
+    else
+      @game = Game.new({notation: ""})
     end
-    @game.save
-    redirect_to game_path(@game)
+    if @game.save
+      redirect_to game_path(@game)
+    else
+      flash[:alert] = "Games must have a PGN and a player selected."
+      redirect_to new_game_path
+    end
   end
 
 
@@ -32,7 +40,8 @@ class GamesController < ApplicationController
     if @game.update(game_params)
       redirect_to game_path(@game)
     else
-      render :edit
+      flash[:alert] = "PGN can't be blank"
+      redirect_to game_path(@game)
     end
   end
 

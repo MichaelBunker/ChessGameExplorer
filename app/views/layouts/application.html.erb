@@ -8,13 +8,19 @@
 </head>
 <body>
   <div class="container">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert"><%= flash[:alert] %></div>
+    <% end %>
     <div id='cssmenu'>
         <% if user_signed_in? %>
         <ul>
           <li class='<%= yield(:index_active)%>'><%= link_to "Chess", root_path %></a></li>
           <li class='<%= yield(:new_game_active)%>' ><%= link_to 'Add a new game', new_game_path %></li>
           <li class='<%= yield(:new_player_active)%>' ><%= link_to 'Add a new Player', new_player_path %></li>
-          <li class='<%= yield(:new_study_active)%>' ><%= link_to 'Study', new_study_path %></li>      
+          <li class='<%= yield(:new_study_active)%>' ><%= link_to 'Study', new_study_path %></li>
           <li class='<%= yield(:edit_profile_active)%>' ><%= link_to 'Edit Profile', edit_user_registration_path %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: 'delete' %></li>
         </ul>

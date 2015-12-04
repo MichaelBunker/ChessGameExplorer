@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "GameFunctions", type: :request do
-  let(:player){ create :player }
   let(:game){ create :game }
   before do
     user = create(:user)
