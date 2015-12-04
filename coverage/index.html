@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-04T02:59:55-08:00">2015-12-04T02:59:55-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-04T03:32:21-08:00">2015-12-04T03:32:21-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.02%</span></span>
+    (<span class="covered_percent"><span class="green">93.06%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>34</b> files in total.
-    <b>344</b> relevant lines. 
-    <span class="green"><b>320</b> lines covered</span> and
+    <b>346</b> relevant lines. 
+    <span class="green"><b>322</b> lines covered</span> and
     <span class="red"><b>24</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -72,10 +72,10 @@
       
       <tr>
         <td class="strong"><a href="#0805e91aa1e46f3362cb6ed45c6cb4fd89bc7459" class="src_link" title="app/controllers/players_controller.rb">app/controllers/players_controller.rb</a></td>
-        <td class="red strong">63.46 %</td>
-        <td>83</td>
-        <td>52</td>
-        <td>33</td>
+        <td class="red strong">64.15 %</td>
+        <td>84</td>
+        <td>53</td>
+        <td>34</td>
         <td>19</td>
         <td>2.4</td>
       </tr>
@@ -364,8 +364,8 @@
         <td class="strong"><a href="#4dc26097d98ff029a6eeeaa2a5b1c0e0d5edbcd1" class="src_link" title="spec/requests/player_functions_spec.rb">spec/requests/player_functions_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>51</td>
-        <td>36</td>
-        <td>36</td>
+        <td>37</td>
+        <td>37</td>
         <td>0</td>
         <td>1.3</td>
       </tr>
@@ -823,10 +823,10 @@
         <div class="source_table" id="0805e91aa1e46f3362cb6ed45c6cb4fd89bc7459">
   <div class="header">
     <h3>app/controllers/players_controller.rb</h3>
-    <h4><span class="red">63.46 %</span> covered</h4>
+    <h4><span class="red">64.15 %</span> covered</h4>
     <div>
-      <b>52</b> relevant lines. 
-      <span class="green"><b>33</b> lines covered</span> and
+      <b>53</b> relevant lines. 
+      <span class="green"><b>34</b> lines covered</span> and
       <span class="red"><b>19</b> lines missed.</span>
     </div>
   </div>
@@ -1104,229 +1104,235 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="46">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="46">
+          <span class="hits">3</span>
           
           <code class="ruby">    @player = Player.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="covered" data-hits="3" data-linenumber="47">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @players = Player.all</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="50">
+        <li class="covered" data-hits="2" data-linenumber="51">
           <span class="hits">2</span>
           
           <code class="ruby">    @player = Player.new(player_params)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="51">
+        <li class="covered" data-hits="2" data-linenumber="52">
           <span class="hits">2</span>
           
           <code class="ruby">    if @player.save</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
+        <li class="covered" data-hits="2" data-linenumber="53">
           <span class="hits">2</span>
           
           <code class="ruby">      redirect_to player_path(@player)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
-          
-          <code class="ruby">      flash[:alert] = &quot;All Fields must be filled in.&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="55">
           
           
-          <code class="ruby">      render :new</code>
+          <code class="ruby">      flash[:alert] = &quot;All Fields must be filled in.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      render :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="60">
+        <li class="covered" data-hits="4" data-linenumber="61">
           <span class="hits">4</span>
           
           <code class="ruby">    @player = Player.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="61">
+        <li class="covered" data-hits="4" data-linenumber="62">
           <span class="hits">4</span>
           
           <code class="ruby">    @games = @player.games.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def edit</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
-          <code class="ruby">    @player = Player.find(params[:id])</code>
+          <code class="ruby">  def edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @player = Player.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="68">
           
-          <code class="ruby">  def update</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
-          <code class="ruby">    @player = Player.find(params[:id])</code>
+          <code class="ruby">  def update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
-          <code class="ruby">    if @player.update(player_params)</code>
+          <code class="ruby">    @player = Player.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
+          <code class="ruby">    if @player.update(player_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
           <code class="ruby">      redirect_to player_path(@player)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="74">
           
           
           <code class="ruby">      render :edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">    player = Player.find(params[:id])</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">    player.destroy</code>
+          <code class="ruby">    player = Player.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">    redirect_to players_path</code>
+          <code class="ruby">    player.destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    redirect_to players_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">end</code>
@@ -6087,8 +6093,8 @@
     <h3>spec/requests/player_functions_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>36</b> relevant lines. 
-      <span class="green"><b>36</b> lines covered</span> and
+      <b>37</b> relevant lines. 
+      <span class="green"><b>37</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6282,82 +6288,82 @@
           <code class="ruby">      click_on &quot;Edit this player&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">      # player.Create, test each route only once.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;Name&quot;, with: &quot;Bob&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;Rating&quot;, with: &quot;1000&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">      click_on &quot;Add&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_content &quot;Page for Bob&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_content &quot;rating: 1000&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;the destroy a player process&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">    it &quot;destroy a player&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
           <code class="ruby">      player = Player.create(name: &quot;Jack&quot;, rating: 2000)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">      visit root_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_on &quot;Add a new Player&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">

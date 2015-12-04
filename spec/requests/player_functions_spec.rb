@@ -29,7 +29,6 @@ RSpec.describe "PlayerFunctions", type: :request do
       fill_in "Rating", with: "2000"
       click_on "Add"
       click_on "Edit this player"
-      # player.Create, test each route only once.
       fill_in "Name", with: "Bob"
       fill_in "Rating", with: "1000"
       click_on "Add"
@@ -42,6 +41,7 @@ RSpec.describe "PlayerFunctions", type: :request do
     it "destroy a player" do
       player = Player.create(name: "Jack", rating: 2000)
       visit root_path
+      click_on "Add a new Player"
       click_link "Jack"
       click_link "Delete this player"
       expect(page).to have_no_content "Jack"
