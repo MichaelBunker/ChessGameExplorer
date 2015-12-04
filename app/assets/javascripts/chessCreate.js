@@ -37,7 +37,7 @@ var onDrop = function(source, target) {
   // illegal move
   if (move === null) return 'snapback';
   updateStatus();
-  // AJAX request for games from DB
+  // AJAX request for games in DB.
   var moves = game.moves();
   var game_pgn = game.pgn();
   var turn = game.turn();
@@ -50,7 +50,7 @@ var onDrop = function(source, target) {
         $('#moves_display').text("")
         moveNumber = json.moves.length
         for (var i = 0; i < moveNumber; i++) {
-          $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td> " + json.next_move[0] + "</td>" + "</tr>" )
+          $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td>" + json.next_move[0] + "</td>" + "</tr>" )
           json.moves.splice(0,1);
           json.next_move.splice(0,1);
         }

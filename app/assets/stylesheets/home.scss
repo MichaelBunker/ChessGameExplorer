@@ -6,6 +6,35 @@
   padding-top: 15px;
 }
 
+@media screen and (max-width: 700px) {
+  #media-hidden {
+    display: none;
+  }
+
+  #players-list {
+    float:right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #board {
+    width: 200px;
+    position: relative;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  #media-hidden{
+    float:left;
+  }
+  .well-sm {
+    float: left;
+  }
+
+}
+
 #board {
   width: 40%;
   padding-left: 10px;
@@ -19,11 +48,9 @@
 
 .well-sm {
   margin-left: 5px;
-  overflow: auto;
-}
-.well-lg {
   overflow: hidden;
-  margin-left: 5px;
+  float: none;
+  display: block;
 }
 
 // Navbar styling
@@ -215,7 +242,7 @@
 }
 // End of Chessboard
 
-// individual game styling
+// StudyBoard styling
 
 #ind_game_pgn {
   display: none;
@@ -225,6 +252,12 @@
   width: 400px;
 }
 
+// End StudyBoard Styling
+
 .table-index {
-  overflow: hidden;
+  max-height: 100px;
+}
+
+th {
+  min-width: 100px;
 }

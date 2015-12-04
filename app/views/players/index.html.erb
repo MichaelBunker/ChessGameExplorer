@@ -2,44 +2,43 @@
 <% if user_signed_in? %>
 
 <div id="board"></div>
-<div class="well well-sm">
-<input type="button" id="startBtn" value="Start">
-<input type="button" id="clearBtn" value="Clear">
-<input type="button" id="undoBtn" value="Undo">
+<div id="media-hidden">
+  <div class="well well-sm">
+  <input type="button" id="startBtn" value="Start">
+  <input type="button" id="clearBtn" value="Clear">
+  <input type="button" id="undoBtn" value="Undo">
 
-<p>Status: <span id="status"></span></p>
-<p>FEN: <span id="fen"></span></p>
-<p>PGN: <span id="pgn"></span></p>
-<%= link_to "Save Game", new_game_path, class: "btn btn-default", id: "save_game_board", remote: true %>
-<% end %>
-<div id="game_save_form"></div>
-</div>
-<br><br>
-<div id="db_display"></div>
-<div class="well well-lg">
-  <h2>Game Database</h2>
-    <table class="table-index">
-      <thead>
-        <tr>
-          <th>Moves</th>
-          <th># of Games</th>
-
-        </tr>
-      </thead>
-      <tbody id="moves_display">
-        <tr>
-          <td>first</td>
-          <td>second</td>
-          <td>example</td>
-        </tr>
-
-      </tbody>
-    </table>
+  <p>Status: <span id="status"></span></p>
+  <p>FEN: <span id="fen"></span></p>
+  <p>PGN: <span id="pgn"></span></p>
+  <%= link_to "Save Game", new_game_path, class: "btn btn-default", id: "save_game_board", remote: true %>
+  <% end %>
+  <div id="game_save_form"></div>
+  </div>
+  <br><br>
+  <div id="db_display"></div>
+  <div class="well well-sm">
+    <h2>Game Database</h2>
+    <div class="table-responsive">
+      <table class="table-index table-striped">
+        <thead>
+          <tr>
+            <th>Moves</th>
+            <th> # of Games</th>
+          </tr>
+        </thead>
+        <tbody id="moves_display">
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <br>
+<div id="players-list">
 <% @players.each do |player| %>
   <%= link_to player.name, player_path(player) %> <br>
 <% end %>
+</div>
 
 <%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "chessCreate.js", "data-turbolinks-track" => true %>
