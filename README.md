@@ -35,6 +35,7 @@
 * PGN Validation
 * PGN Parser
 * Stockfish AI
+* display more specific statistics for games. Win/Loss/Draw percentage for both colors for each move.
 * Incorporate Redis and Sidekiq for background jobs to improve performance and find/display game statistics.
 * Notes for individual moves / games
 * Display games by players and date
