@@ -1,7 +1,7 @@
 
 var game = new Chess();
-statusEl = $('#status'),
-fenEl = $('#fen'),
+statusEl = $('#status');
+fenEl = $('#fen');
 pgnEl = $('#pgn');
 
 var removeGreySquares = function() {
@@ -47,7 +47,6 @@ var onDrop = function(source, target) {
       data: {game_pgn, moves, turn},
       dataType: 'json',
       success: function(json, responseText, jqXHR) {
-        console.log(json)
         $('#moves_display').text("")
         moveNumber = json.moves.length
         for (var i = 0; i < moveNumber; i++) {
@@ -60,7 +59,6 @@ var onDrop = function(source, target) {
 };
 
 var onMouseoverSquare = function(square, piece) {
-  // get list of possible moves for this square
   var moves = game.moves({
     square: square,
     verbose: true
@@ -88,11 +86,11 @@ var updateStatus = function() {
   if (game.turn() === 'b') {
     moveColor = 'Black';
   }
-  // checkmate?
+
   if (game.in_checkmate() === true) {
     status = 'Game over, ' + moveColor + ' is in checkmate.';
   }
-  // draw?
+
   else if (game.in_draw() === true) {
     status = 'Game over, drawn position';
   }

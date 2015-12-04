@@ -3,8 +3,14 @@ class PlayersController < ApplicationController
   before_action :authenticate_user!
   respond_to :js, :json, :html
 
+  private
+    def player_params
+      params.require(:player).permit(:name, :rating)
+    end
+
+  public
   def index
-    # think about stripping pgn notation whitespace to help refactor this spaghetti code.
+    # refactor this into something respectable
     @user = current_user
     @players = Player.all
     pgn = params[:game_pgn]
@@ -13,16 +19,7 @@ class PlayersController < ApplicationController
     if moves
       @games = Game.where("notation LIKE ?", "#{pgn}%")
       @moves_a = []
-      if pgn == "1. e4"
-          moves.each do |move|
-            number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
-            if number == 0
-              @moves_a << 0
-            else
-              @moves_a << number.length
-            end
-          end
-      end
+      # adds space and move number to pgn to allow for DB searching.
       if turn == 'w'
         number = pgn.scan(/\d\./)
         convert = number.last.to_i
@@ -80,12 +77,6 @@ class PlayersController < ApplicationController
     player = Player.find(params[:id])
     player.destroy
     redirect_to players_path
-  end
-
-
-private
-  def player_params
-    params.require(:player).permit(:name, :rating)
   end
 
 end
