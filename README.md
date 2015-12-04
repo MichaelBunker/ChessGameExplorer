@@ -1,4 +1,4 @@
-![alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg "Chess Pieces")
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg" alt="Drawing" width="400" height="400"/>
 
 ## Synopsis
 
