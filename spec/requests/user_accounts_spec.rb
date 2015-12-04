@@ -9,7 +9,7 @@ RSpec.describe "UserAccounts", type: :request do
       fill_in "Password", with: "password123"
       fill_in "Password confirmation", with: "password123"
       click_on "Sign up"
-      expect(page).to have_content "Hello World!"
+      expect(page).to have_content "Game Database"
     end
 
     it "logs a user in" do
@@ -19,7 +19,7 @@ RSpec.describe "UserAccounts", type: :request do
       fill_in "Email", with: "bunker@gmail.com"
       fill_in "Password", with: "password123"
       click_on "Log in"
-      expect(page).to have_content "Hello World!"
+      expect(page).to have_content "Game Database"
     end
 
     it "logs a user out" do
