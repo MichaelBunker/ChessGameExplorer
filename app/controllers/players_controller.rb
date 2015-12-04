@@ -4,12 +4,12 @@ class PlayersController < ApplicationController
   respond_to :js, :json, :html
 
   def index
+    # think about stripping pgn notation whitespace to help refactor this spaghetti code.
     @user = current_user
     @players = Player.all
     pgn = params[:game_pgn]
     moves = params[:moves]
     turn = params[:turn]
-    # ruby string method (strip) Normalize the pgn data before it enters controller, and then manipulate it in here to have spaces.
     if moves
       @games = Game.where("notation LIKE ?", "#{pgn}%")
       @moves_a = []
@@ -23,15 +23,13 @@ class PlayersController < ApplicationController
             end
           end
       end
-      # pry
       if turn == 'w'
         number = pgn.scan(/\d\./)
         convert = number.last.to_i
         addToGame = convert + 1
         newStringNum = addToGame.to_s
-        pgn.concat(" " + newStringNum + ". ")
+        pgn.concat(" " + newStringNum + ".")
       end
-      # pry
       moves.each do |move|
           number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
         if number == 0
