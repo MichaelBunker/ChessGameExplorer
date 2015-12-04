@@ -1,4 +1,4 @@
-![alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg "Chess Pieces")
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg" alt="Drawing" width="400" height="400"/>
 
 ## Synopsis
 
@@ -30,20 +30,23 @@
 * wikipedia-client
 * And I am sure I am missing a few.
 
-## Features to Add
+## Features to Add / TODO
 
 * PGN Validation
 * PGN Parser
 * Stockfish AI
+* display more specific statistics for games. Win/Loss/Draw percentage for both colors for each move.
+* Incorporate Redis and Sidekiq for background jobs to improve performance and find/display game statistics.
 * Notes for individual moves / games
 * Display games by players and date
 * Better error messages / exceptions
+* Improve test coverage and make tests more flexible.
 
 ## Special Thanks
 
 *  _Josue V._ - For helping with bug fixing.
 *  _Jeremiah H._ - For answering a never-ending sea of programming questions.
-
+ 
 ## License
 
 Copyright (c) 2015 **_Mike Bunker_**
