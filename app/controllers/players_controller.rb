@@ -53,7 +53,7 @@ class PlayersController < ApplicationController
       redirect_to player_path(@player)
     else
       flash[:alert] = "All Fields must be filled in."
-      render :new
+      render :index
     end
   end
 
