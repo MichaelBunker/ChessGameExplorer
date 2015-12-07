@@ -14,6 +14,7 @@ gem 'formtastic'
 gem 'wikipedia-client', require: "wikipedia"
 gem 'rest-client'
 gem 'httparty'
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'byebug'
