@@ -13,7 +13,6 @@ class PlayersController < ApplicationController
     # refactor this into something respectable
     @user = current_user
     @players = Player.all
-    binding.pry
     pgn = params[:game_pgn]
     moves = params[:moves]
     turn = params[:turn]
@@ -36,9 +35,10 @@ class PlayersController < ApplicationController
           @moves_a << number.length
         end
       end
+      @response = {"moves": moves, "next_move": @moves_a}
       respond_with do |format|
         format.html
-        format.json { render :json => {"moves": moves, "next_move": @moves_a} }
+        format.json { render :json => @response }
       end
     end
   end
