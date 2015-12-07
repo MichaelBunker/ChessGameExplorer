@@ -13,6 +13,7 @@ class PlayersController < ApplicationController
     # refactor this into something respectable
     @user = current_user
     @players = Player.all
+    binding.pry
     pgn = params[:game_pgn]
     moves = params[:moves]
     turn = params[:turn]

@@ -42,20 +42,20 @@ var onDrop = function(source, target) {
   var game_pgn = game.pgn();
   var turn = game.turn();
   $.ajax({
-      type: "GET",
-      url: "/players",
-      data: {game_pgn, moves, turn},
-      dataType: 'json',
-      success: function(json, responseText, jqXHR) {
-        $('#moves_display').text("")
-        moveNumber = json.moves.length
-        for (var i = 0; i < moveNumber; i++) {
-          $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td>" + json.next_move[0] + "</td>" + "</tr>" )
-          json.moves.splice(0,1);
-          json.next_move.splice(0,1);
-        }
+    type: "GET",
+    url: "/players",
+    data: {game_pgn: game_pgn, moves: moves, turn: turn},
+    dataType: 'json',
+    success: function(json, responseText, jqXHR) {
+      $('#moves_display').text("")
+      moveNumber = json.moves.length
+      for (var i = 0; i < moveNumber; i++) {
+        $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td>" + json.next_move[0] + "</td>" + "</tr>" )
+        json.moves.splice(0,1);
+        json.next_move.splice(0,1);
       }
-    })
+    }
+  })
 };
 
 var onMouseoverSquare = function(square, piece) {
