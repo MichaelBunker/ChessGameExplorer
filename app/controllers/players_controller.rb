@@ -35,10 +35,15 @@ class PlayersController < ApplicationController
           @moves_a << number.length
         end
       end
-      @response = {"moves": moves, "next_move": @moves_a}
       respond_with do |format|
         format.html
-        format.json { render :json => @response }
+
+        format.json do
+          render json: {
+            moves: moves,
+            next_move: @moves_a
+          }.to_json
+        end
       end
     end
   end
