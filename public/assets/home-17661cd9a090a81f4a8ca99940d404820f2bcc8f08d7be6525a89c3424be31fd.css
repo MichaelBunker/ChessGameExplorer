@@ -1,0 +1,316 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+/* line 2, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.container {
+  background-color: #e7e7e7;
+  min-height: 100%;
+  height: 100%;
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 10, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #media-hidden {
+    display: none;
+  }
+
+  /* line 14, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #players-list {
+    float: right;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 20, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #board {
+    width: 200px;
+    position: relative;
+  }
+
+  /* line 25, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  .container {
+    height: auto;
+  }
+
+  /* line 29, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #media-hidden {
+    float: left;
+  }
+
+  /* line 32, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  .well-sm {
+    float: left;
+  }
+}
+/* line 38, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#board {
+  width: 40%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+  float: left;
+}
+
+/* line 45, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.navbar {
+  background-color: #e9e9e9;
+}
+
+/* line 49, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.well-sm {
+  margin-left: 5px;
+  overflow: hidden;
+  float: none;
+  display: block;
+}
+
+/* line 58, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu {
+  background: #f96e5b;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+/* line 63, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+
+/* line 71, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 79, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 84, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu.align-right ul li {
+  float: right;
+}
+
+/* line 87, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu.align-center ul {
+  text-align: center;
+}
+
+/* line 90, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+
+/* line 106, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li a:hover {
+  color: #333333;
+}
+
+/* line 109, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li a:hover:before {
+  width: 100%;
+}
+
+/* line 112, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+
+/* line 123, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #333333;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+
+/* line 138, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li.last > a:after,
+#cssmenu ul li:last-child > a:after {
+  display: none;
+}
+
+/* line 142, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li.active a {
+  color: #333333;
+}
+
+/* line 145, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu ul li.active a:before {
+  width: 100%;
+}
+
+/* line 148, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu.align-right li.last > a:after,
+#cssmenu.align-right li:last-child > a:after {
+  display: block;
+}
+
+/* line 152, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#cssmenu.align-right li:first-child a:after {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 156, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #cssmenu ul li {
+    float: none;
+    display: block;
+  }
+
+  /* line 160, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #cssmenu ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fb998c;
+  }
+
+  /* line 167, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #cssmenu ul li.last > a,
+  #cssmenu ul li:last-child > a {
+    border: 0;
+  }
+
+  /* line 171, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #cssmenu ul li a:after {
+    display: none;
+  }
+
+  /* line 174, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+  #cssmenu ul li a:before {
+    display: none;
+  }
+}
+/* https://github.com/oakmac/chessboardjs/blob/master/LICENSE
+/* clearfix */
+/* line 184, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.clearfix-7da63 {
+  clear: both;
+}
+
+/* board */
+/* line 189, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.board-b72b1 {
+  border: 2px solid #404040;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* square */
+/* line 196, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.square-55d63 {
+  float: left;
+  position: relative;
+  /* disable any native browser highlighting */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* white square */
+/* line 210, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.white-1e1d7 {
+  background-color: #f0d9b5;
+  color: #b58863;
+}
+
+/* black square */
+/* line 216, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.black-3c85d {
+  background-color: #b58863;
+  color: #f0d9b5;
+}
+
+/* highlighted square */
+/* line 222, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.highlight1-32417, .highlight2-9c5d2 {
+  -webkit-box-shadow: inset 0 0 3px 3px yellow;
+  -moz-box-shadow: inset 0 0 3px 3px yellow;
+  box-shadow: inset 0 0 3px 3px yellow;
+}
+
+/* notation */
+/* line 229, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.notation-322f9 {
+  cursor: default;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  position: absolute;
+}
+
+/* line 235, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.alpha-d2270 {
+  bottom: 1px;
+  right: 3px;
+}
+
+/* line 239, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.numeric-fc462 {
+  top: 2px;
+  left: 2px;
+}
+
+/* line 247, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#ind_game_pgn {
+  display: none;
+}
+
+/* line 251, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+#show_game_board {
+  width: 400px;
+}
+
+/* line 257, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+.table-index {
+  max-height: 100px;
+}
+
+/* line 261, /home/bunker/Desktop/project_rails/app/assets/stylesheets/home.scss */
+th {
+  min-width: 100px;
+}
