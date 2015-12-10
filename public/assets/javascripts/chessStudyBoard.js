@@ -8,7 +8,6 @@ var moves = gameHistory.history();
 var cfg = {
   draggable: true,
   position: 'start',
-  onDragStart: onDragStart,
   onDrop: onDrop,
   onMouseoutSquare: onMouseoutSquare,
   onMouseoverSquare: onMouseoverSquare,
