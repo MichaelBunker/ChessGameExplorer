@@ -1,4 +1,3 @@
-
 game = new Chess(),
 statusEl = $('#status'),
 fenEl = $('#fen'),
