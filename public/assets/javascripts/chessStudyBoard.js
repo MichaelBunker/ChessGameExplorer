@@ -1,22 +1,3 @@
-
-var game = new Chess();
-statusEl = $('#status');
-fenEl = $('#fen');
-pgnEl = $('#pgn');
-
-var removeGreySquares = function() {
-  $('#board .square-55d63').css('background', '');
-};
-
-var greySquare = function(square) {
-  var squareEl = $('#board .square-' + square);
-  var background = '#a9a9a9';
-  if (squareEl.hasClass('black-3c85d') === true) {
-    background = '#696969';
-  }
-  squareEl.css('background', background);
-};
-
 var onDragStart = function(source, piece) {
   // do not pick up pieces if the game is over or if it's not that side's turn
   if (game.game_over() === true ||
@@ -37,26 +18,8 @@ var onDrop = function(source, target) {
   // illegal move
   if (move === null) return 'snapback';
   updateStatus();
-  // AJAX request for games in DB.
-  var moves = game.moves();
-  var game_pgn = game.pgn();
-  var turn = game.turn();
-  $.ajax({
-      type: "GET",
-      url: "/players",
-      data: {game_pgn, moves, turn},
-      dataType: 'json',
-      success: function(json, responseText, jqXHR) {
-        $('#moves_display').text("")
-        moveNumber = json.moves.length
-        for (var i = 0; i < moveNumber; i++) {
-          $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td>" + json.next_move[0] + "</td>" + "</tr>" )
-          json.moves.splice(0,1);
-          json.next_move.splice(0,1);
-        }
-      }
-    })
 };
+
 
 var onMouseoverSquare = function(square, piece) {
   var moves = game.moves({
@@ -107,6 +70,13 @@ var updateStatus = function() {
   pgnEl.html(game.pgn());
 };
 
+// game lets the board be created at the start position.
+// gameHistory gets this pgn of the game we want to study.
+var game = new Chess();
+var gameHistory = new Chess();
+var pgn = $('#ind_game_pgn').text();
+gameHistory.load_pgn(pgn);
+var moves = gameHistory.history();
 var cfg = {
   draggable: true,
   position: 'start',
@@ -117,12 +87,10 @@ var cfg = {
   onSnapEnd: onSnapEnd
 };
 
-var board = ChessBoard('board', cfg);
+var board = ChessBoard('show_game_board', cfg);
 
 $('#startBtn').on('click', function() {
   board.start();
-  var game = new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-  updateStatus();
 });
 
 $('#clearBtn').on('click', function() {
@@ -138,5 +106,10 @@ $('#undoBtn').on('click', function() {
   game.undo();
   var fen = game.fen();
   board.position(fen);
-  updateStatus();
+});
+$('#moveBtn').on('click', function() {
+  game.move(moves[0]);
+  fen = game.fen();
+  board.position(fen);
+  moves.splice(0,1)
 });
