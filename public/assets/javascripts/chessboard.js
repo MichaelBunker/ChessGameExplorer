@@ -341,14 +341,14 @@ function checkDeps() {
     }
 
     // make sure the container element exists in the DOM
-    // Bunker TODO - find out why this is raising exception.
-    // var el = document.getElementById(containerElOrId);
-    // if (! el) {
-    //   window.alert('ChessBoard Error 1002: Element with id "' +
-    //     containerElOrId + '" does not exist in the DOM.' +
-    //     '\n\nExiting...');
-    //   return false;
-    // }
+
+    var el = document.getElementById(containerElOrId);
+    if (! el) {
+      window.alert('ChessBoard Error 1002: Element with id "' +
+        containerElOrId + '" does not exist in the DOM.' +
+        '\n\nExiting...');
+      return false;
+    }
 
     // set the containerEl
     containerEl = $(el);
