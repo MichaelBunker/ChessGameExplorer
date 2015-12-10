@@ -11,4 +11,5 @@
 <h5><%= link_to 'Edit this game', edit_game_path(@game) %></h5>
 <h5><%= link_to 'Delete this game', game_path(@game), data: {confirm: "Are You Sure?", method: "delete"} %></h5>
 
-<%= javascript_include_tag "chessStudyBoard.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'chessStudyBoard', "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'chessboard', "data-turbolinks-track" => true %>

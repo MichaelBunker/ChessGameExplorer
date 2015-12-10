@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /*!
  * chessboard.js v0.3.0
  *
@@ -1720,7 +1718,6 @@ window.ChessBoard.objToFen = objToFen;
 
 
 // index board
->>>>>>> d3a9ee7da92ddef1957bf6b2f3377284c55c23c0
 game = new Chess(),
 statusEl = $('#status'),
 fenEl = $('#fen'),
