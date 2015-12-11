@@ -7,7 +7,9 @@ class GamesController < ApplicationController
 
   def create
     @players = Player.all
+    binding.pry
     @game = Game.new(game_params)
+    @game.pgn = game_params[:file]
     if params[:player_ids]
       players = Player.find(params[:player_ids])
       players.each do |player|
@@ -53,6 +55,6 @@ class GamesController < ApplicationController
 
 private
   def game_params
-    params.require(:game).permit(:notation, :player_id)
+    params.require(:game).permit(:notation, :player_id, :pgn)
   end
 end

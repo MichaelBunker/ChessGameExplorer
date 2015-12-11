@@ -1,7 +1,10 @@
-<%= form_for @game do |f| %>
+<%= form_for @game, :html => {multipart: true} do |f| %>
   <div class="form-group">
     <%= f.label :notation %>
     <%= f.text_field :notation, class: "form-control", id: "game_notation_form" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :pgn %>
   </div>
 
   <% @players.each do |player| %>

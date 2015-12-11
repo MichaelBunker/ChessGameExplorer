@@ -1,0 +1,120 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.11.17"]
+[White "Mikusbunkarus"]
+[Black "tennis1989h"]
+[Result "1-0"]
+[WhiteElo "1506"]
+[BlackElo "1350"]
+[TimeControl "15|10"]
+[Termination "Mikusbunkarus won by resignation"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.Nc3 Bd6 6.O-O Nf6 7.d3 h6 8.Be3 O-O 9.d4 Re8 10.Qd2 Bg4
+ 11.dxe5 Bxe5 12.Qxd8 Raxd8 13.Nxe5 Rxe5 14.f3 Be6 15.Bf4 Rh5 16.Bxc7 Rd2 17.Rf2 Rd7 18.Bf4 g5 19.g4 Bxg4 20.fxg4 Nxg4
+ 21.Rd2 Rxd2 22.Bxd2 Rxh2 23.Rd1 Kg7 24.Na4 Kg6 25.Nc5 b6 26.Nd7 b5 27.Ne5+ Nxe5 28.Kxh2 Nf3+ 29.Kg3 Ne5 30.Bc3 Nc4
+ 31.b3 Ne3 32.Rd6+ Kh7 33.Rd7 Kg6 34.Rd6+ Kh7 35.Rxc6 Nxc2 36.Rxa6 b4 37.Be5 Ne3 38.Rf6 Kg7 39.Rf3+ 1-0
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.11.18"]
+[White "franzorvar"]
+[Black "Mikusbunkarus"]
+[Result "1-0"]
+[WhiteElo "1272"]
+[BlackElo "1210"]
+[TimeControl "10|0"]
+[Termination "franzorvar won by resignation"]
+
+1.e4 d5 2.e5 c5 3.Nf3 Bg4 4.d4 cxd4 5.Qxd4 Bxf3 6.gxf3 Nc6 7.Bb5 e6 8.Qa4 Qc7 9.Nc3 Qxe5+ 10.Be3 Nge7
+ 11.Ne2 g6 12.Bd4 1-0
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.11.23"]
+[White "Mikusbunkarus"]
+[Black "gzorga"]
+[Result "1-0"]
+[WhiteElo "1220"]
+[BlackElo "1223"]
+[TimeControl "10|0"]
+[Termination "Mikusbunkarus won by resignation"]
+
+1.d4 d5 2.c4 c5 3.dxc5 Qa5+ 4.Nc3 dxc4 5.Bd2 Qxc5 6.Ne4 Qe5 7.Nc3 Nc6 8.Nf3 Qh5 9.e3 Nf6 10.Bxc4 Bg4
+ 11.Be2 e6 12.h3 Bxf3 13.Bxf3 Qe5 14.O-O Bd6 15.g3 O-O 16.Rc1 a6 17.Na4 Nd5 18.Bxd5 exd5 19.Bc3 Qe6 20.a3 Qxh3
+ 21.Nb6 Rad8 22.Nxd5 Ne5 23.Nf4 Qg4 24.Qxg4 Nxg4 25.Rfd1 Bxf4 26.Rxd8 Rxd8 27.gxf4 Rc8 28.Bd2 Rxc1+ 29.Bxc1 Nf6 30.b4 Ne4
+ 31.Kg2 f5 32.f3 Nc3 33.Bb2 Na4 34.Bd4 h6 35.e4 g6 36.e5 Kf7 37.Kf2 Ke6 38.Ke2 Kd5 39.Ba1 Kc4 40.e6 Nb6
+ 41.e7 1-0
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.11.25"]
+[White "borneo_crue"]
+[Black "Mikusbunkarus"]
+[Result "1/2-1/2"]
+[WhiteElo "1246"]
+[BlackElo "1221"]
+[TimeControl "10|0"]
+[Termination "Game drawn - insufficient material"]
+
+1.e4 d5 2.exd5 Qxd5 3.d4 Nc6 4.Nf3 Nf6 5.Nc3 Qd8 6.Bg5 e6 7.Bb5 Be7 8.O-O O-O 9.Bxc6 bxc6 10.Ne5 c5
+ 11.d5 exd5 12.Bxf6 Bxf6 13.Nf3 Bxc3 14.bxc3 Bg4 15.Qd3 Qf6 16.h3 Bf5 17.Qe3 Rfe8 18.Qc1 Be4 19.Nd2 Qxc3 20.Nxe4 Rxe4
+ 21.Qg5 Rae8 22.Qxd5 Qxc2 23.Rac1 Qa4 24.Qxc5 g6 25.Qxc7 Qxa2 26.Ra1 Qd2 27.Rxa7 R4e7 28.Qb6 Re1 29.Rxe1 Rxe1+ 30.Kh2 Kg7
+ 31.Qc5 Re2 32.Kg3 h5 33.Rc7 g5 34.Qc3+ Qxc3+ 35.Rxc3 f5 36.Kf3 Re4 37.g3 g4+ 38.hxg4 Rxg4 39.Rc5 Kg6 40.Rc8 Kf6
+ 41.Rf8+ Kg6 42.Rg8+ Kf6 43.Rxg4 fxg4+ 44.Kf4 Kg6 45.f3 gxf3 46.Kxf3 Kg5 47.Kg2 Kg4 48.Kf2 Kh3 49.Kf3 h4 50.gxh4 Kxh4
+ 1/2-1/2
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.11.29"]
+[White "Mikusbunkarus"]
+[Black "SublimeMan"]
+[Result "0-1"]
+[WhiteElo "1212"]
+[BlackElo "1262"]
+[TimeControl "10|0"]
+[Termination "SublimeMan won on time"]
+
+1.d4 Nc6 2.Nf3 Nf6 3.g3 e6 4.Bg2 Nd5 5.O-O Qf6 6.e4 Ndb4 7.e5 Qg6 8.Na3 Nd5 9.c4 Ndb4 10.Nb5 Kd8
+ 11.a3 Nd3 12.Be3 a6 13.Nc3 Nxb2 14.Qb3 Nd3 15.Rfd1 f6 16.exf6 gxf6 17.d5 Na5 18.Qc2 Nxf2 19.Qxg6 hxg6 20.Kxf2 e5
+ 21.Bf1 d6 22.Bd2 b6 23.Na4 Nb7 24.Nc3 Bg4 25.Bg2 Bxf3 26.Bxf3 Rxh2+ 27.Kg1 Rh3 28.Ne4 Be7 29.a4 f5 30.Ng5 Rxg3+
+ 31.Kf2 Rxg5 32.Bxg5 Bxg5 33.Rg1 Bd2 34.Rxg6 Kc8 0-1
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.12.04"]
+[White "kjartangunnar"]
+[Black "Mikusbunkarus"]
+[Result "1-0"]
+[WhiteElo "1218"]
+[BlackElo "1202"]
+[TimeControl "10|0"]
+[Termination "kjartangunnar won by resignation"]
+
+1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.d4 Nf6 5.Bc4 Bf5 6.Nf3 e6 7.O-O Bb4 8.Bd2 O-O 9.Ne5 c6 10.a3 Bxc3
+ 11.Bxc3 Nbd7 12.Nxd7 Qxd7 13.d5 cxd5 14.Bb3 Rac8 15.Bxf6 gxf6 16.f4 1-0
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2015.12.07"]
+[White "vivafe2000"]
+[Black "Mikusbunkarus"]
+[Result "1-0"]
+[WhiteElo "1347"]
+[BlackElo "1196"]
+[TimeControl "5|0"]
+[Termination "vivafe2000 won by checkmate"]
+
+1.e4 d5 2.exd5 Qxd5 3.Qf3 Nf6 4.Qxd5 Nxd5 5.Bc4 Nb6 6.Be2 Bf5 7.d3 e6 8.Nf3 Bc5 9.O-O O-O 10.c3 Nc6
+ 11.d4 Be7 12.Ne5 Nxe5 13.dxe5 Rad8 14.Na3 Rd5 15.f4 Rfd8 16.Nc4 Nxc4 17.Bxc4 Rd1 18.Be3 Rxa1 19.Rxa1 b6 20.a3 c6
+ 21.g3 b5 22.Bf1 a6 23.Bb6 Rd2 24.b4 f6 25.Bd4 Rc2 26.a4 fxe5 27.Bxe5 bxa4 28.Rxa4 Bf6 29.Bxf6 gxf6 30.Rxa6 Rxc3
+ 31.b5 cxb5 32.Bxb5 Rc1+ 33.Kg2 Be4+ 34.Kh3 Rc2 35.Bf1 Bf5+ 36.g4 Be4 37.Rxe6 f5 38.g5 Bd5 39.Rf6 Rc5 40.Bg2 Rc3+
+ 41.Kh4 Bxg2 42.g6 Rh3+ 43.Kg5 Be4 44.gxh7+ Rxh7 45.h4 Kg7 46.Rg6+ Kf7 47.h5 Ke7 48.h6 Kf7 49.Rf6+ Kg8 50.Kg6 Kh8
+ 51.Rf8# 1-0
+
+
