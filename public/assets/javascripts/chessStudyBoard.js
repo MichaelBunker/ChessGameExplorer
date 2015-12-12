@@ -8,7 +8,6 @@ var onDragStart = function(source, piece) {
 };
 
 var onDrop = function(source, target) {
-  removeGreySquares();
   // check if the move is legal
   var move = game.move({
     from: source,
@@ -28,15 +27,10 @@ var onMouseoverSquare = function(square, piece) {
   });
   // exit if there are no moves available for this square
   if (moves.length === 0) return;
-  greySquare(square);
   // highlight the possible squares for this piece
-  for (var i = 0; i < moves.length; i++) {
-    greySquare(moves[i].to);
-  }
 };
 
 var onMouseoutSquare = function(square, piece) {
-  removeGreySquares();
 };
 
 var onSnapEnd = function() {

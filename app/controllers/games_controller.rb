@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  respond_to :js, :json, :html
 
   def new
     @players = Player.all
@@ -7,7 +8,6 @@ class GamesController < ApplicationController
 
   def create
     @players = Player.all
-    binding.pry
     @game = Game.new(game_params)
     @game.pgn = game_params[:file]
     if params[:player_ids]
@@ -29,7 +29,6 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-
   end
 
   def edit
@@ -38,14 +37,33 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = Game.find(params[:id])
-    if @game.update(game_params)
-      redirect_to game_path(@game)
-    else
-      flash[:alert] = "PGN can't be blank"
-      redirect_to game_path(@game)
+    respond_with do |format|
+      format.html do
+        @game = Game.find(params[:id])
+        unless @game.update(game_params)
+          flash[:alert] = "PGN can't be blank"
+          puts 'game update section'
+          redirect_to game_path(@game)
+        end
+        format.js do
+          @game = Game.find(params[:gameNum])
+          @game.notation = params[:gameNotation]
+          puts 'pgn format response'
+          render nothing: true
+        end
+      end
     end
   end
+    #
+    # respond_to do |format|
+    #   format.js do
+    #     # binding.pry
+    #     @game = Game.find(params[:gameNum])
+    #     @game.notation = params[:gameNotation]
+    #     puts 'pgn format response'
+    #     render nothing: true
+    #   end
+    # end
 
   def destroy
     game = Game.find(params[:id])
@@ -55,6 +73,6 @@ class GamesController < ApplicationController
 
 private
   def game_params
-    params.require(:game).permit(:notation, :player_id, :pgn)
+    params.permit(:notation, :player_id, :pgn)
   end
 end
