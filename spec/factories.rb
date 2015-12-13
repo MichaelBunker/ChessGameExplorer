@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :pgn do
+    
+  end
+
   factory :user do
     email 'bunker@gmail.com'
     password 'password123'

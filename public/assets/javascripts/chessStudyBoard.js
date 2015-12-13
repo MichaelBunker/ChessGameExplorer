@@ -7,42 +7,6 @@ var onDragStart = function(source, piece) {
   }
 };
 
-var onDrop = function(source, target) {
-  removeGreySquares();
-  // check if the move is legal
-  var move = game.move({
-    from: source,
-    to: target,
-    promotion: 'q'
-  });
-  // illegal move
-  if (move === null) return 'snapback';
-  updateStatus();
-};
-
-
-var onMouseoverSquare = function(square, piece) {
-  var moves = game.moves({
-    square: square,
-    verbose: true
-  });
-  // exit if there are no moves available for this square
-  if (moves.length === 0) return;
-  greySquare(square);
-  // highlight the possible squares for this piece
-  for (var i = 0; i < moves.length; i++) {
-    greySquare(moves[i].to);
-  }
-};
-
-var onMouseoutSquare = function(square, piece) {
-  removeGreySquares();
-};
-
-var onSnapEnd = function() {
-  board.position(game.fen());
-};
-
 var updateStatus = function() {
   var status = '';
   var moveColor = 'White';
@@ -65,9 +29,6 @@ var updateStatus = function() {
       status += ', ' + moveColor + ' is in check';
     }
   }
-  statusEl.html(status);
-  fenEl.html(game.fen());
-  pgnEl.html(game.pgn());
 };
 
 // game lets the board be created at the start position.
@@ -80,11 +41,6 @@ var moves = gameHistory.history();
 var cfg = {
   draggable: true,
   position: 'start',
-  onDragStart: onDragStart,
-  onDrop: onDrop,
-  onMouseoutSquare: onMouseoutSquare,
-  onMouseoverSquare: onMouseoverSquare,
-  onSnapEnd: onSnapEnd
 };
 
 var board = ChessBoard('show_game_board', cfg);

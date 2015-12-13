@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   devise_for :users
 
@@ -8,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :studies
 
+  resources :pgns
 
+  mount Sidekiq::Web, at: '/sidekiq'
 end

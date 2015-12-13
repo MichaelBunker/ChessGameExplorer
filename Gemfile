@@ -15,6 +15,11 @@ gem 'wikipedia-client', require: "wikipedia"
 gem 'rest-client'
 gem 'httparty'
 gem 'rails_12factor', group: :production
+gem 'carrierwave'
+gem 'redis'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 group :development do
   gem 'byebug'
