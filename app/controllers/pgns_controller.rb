@@ -15,8 +15,9 @@ public
   def create
     @pgn = Pgn.new(pgn_params)
     if @pgn.save
+    # binding.pry
       PgnsWorker.perform_async(@pgn.id)
-      redirect_to game_path(@pgn)
+      redirect_to pgn_path(@pgn)
     else
       flash[:alert] = "Something Went wrong."
       redirect_to new_pgn_path
@@ -25,8 +26,7 @@ public
 
 
   def show
-    @game = Game.find(params[:id])
-
+    @pgn = Pgn.find(params[:id])
   end
 
   def edit
