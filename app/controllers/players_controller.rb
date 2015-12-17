@@ -42,10 +42,6 @@ class PlayersController < ApplicationController
           @white_wins << white_wins.length
           @black_wins << black_wins.length
           @draws << draws.length
-          # white_wins = number.scan(/1-0/)
-          # black_wins = number.scan(/0-1/)
-          # draws = number.scan(/½–½/)
-
           @moves_a << number.length
         else
 
