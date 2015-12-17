@@ -1,5 +1,4 @@
 class PlayersController < ApplicationController
-
   before_action :authenticate_user!
   respond_to :js, :json, :html
 
@@ -16,9 +15,16 @@ class PlayersController < ApplicationController
     pgn = params[:game_pgn]
     moves = params[:moves]
     turn = params[:turn]
+    win_cons = ['1-0','0-1','½–½']
+    white_win = "1-0"
+    black_win = "0-1"
+    draw = "1/2-1/2"
     if moves
       @games = Game.where("notation LIKE ?", "#{pgn}%")
       @moves_a = []
+      @white_wins = []
+      @black_wins = []
+      @draws = []
       # adds space and move number to pgn to allow for DB searching.
       if turn == 'w'
         number = pgn.scan(/\d\./)
@@ -29,18 +35,32 @@ class PlayersController < ApplicationController
       end
       moves.each do |move|
           number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
-        if number == 0
-          @moves_a << 0
-        else
+        if number.length > 0
+          white_wins = @games.where("notation LIKE ? AND notation LIKE ?", "#{pgn} #{move}%", "%#{white_win}%")
+          black_wins = @games.where("notation LIKE ? AND notation LIKE ?", "#{pgn} #{move}%", "%#{black_win}%")
+          draws      = @games.where("notation LIKE ? AND notation LIKE ?", "#{pgn} #{move}%", "%#{draw}%")
+          @white_wins << white_wins.length
+          @black_wins << black_wins.length
+          @draws << draws.length
+          # white_wins = number.scan(/1-0/)
+          # black_wins = number.scan(/0-1/)
+          # draws = number.scan(/½–½/)
+
           @moves_a << number.length
+        else
+
         end
       end
+      # binding.pry
       respond_with do |format|
         format.html
 
         format.json do
           render json: {
             moves: moves,
+            white_wins: @white_wins,
+            black_wins: @black_wins,
+            draws: @draws,
             next_move: @moves_a
           }.to_json
         end

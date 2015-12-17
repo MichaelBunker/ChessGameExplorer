@@ -1767,11 +1767,16 @@ var onDrop = function(source, target) {
     dataType: 'json',
     success: function(json, responseText, jqXHR) {
       $('#moves_display').text("")
+      debugger;
+      // json.next_move = $.grep(json.next_move,function(n){ return n == 0 || n });
       moveNumber = json.moves.length
       for (var i = 0; i < moveNumber; i++) {
-        $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td>" + json.next_move[0] + "</td>" + "</tr>" )
+        $('#moves_display').append("<tr> <td> " + json.moves[0] + "</td>" + "<td>" + json.next_move[0] + "</td>" + "<td>" + json.white_wins[0] + "</td>" + "<td>" + json.black_wins[0] + "</td>" + "<td>" + json.draws[0] + "</td>" + "</tr>")
         json.moves.splice(0,1);
         json.next_move.splice(0,1);
+        json.white_wins.splice(0,1);
+        json.black_wins.splice(0,1);
+        json.draws.splice(0,1);
       }
     }
   })
