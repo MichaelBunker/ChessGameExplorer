@@ -35,17 +35,13 @@ class PlayersController < ApplicationController
       end
       moves.each do |move|
           number = @games.where("notation LIKE ?", "#{pgn} #{move}%")
-        if number.length > 0
+          @moves_a << number.length
           white_wins = @games.where("notation LIKE ? AND notation LIKE ?", "#{pgn} #{move}%", "%#{white_win}%")
           black_wins = @games.where("notation LIKE ? AND notation LIKE ?", "#{pgn} #{move}%", "%#{black_win}%")
           draws      = @games.where("notation LIKE ? AND notation LIKE ?", "#{pgn} #{move}%", "%#{draw}%")
           @white_wins << white_wins.length
           @black_wins << black_wins.length
           @draws << draws.length
-          @moves_a << number.length
-        else
-
-        end
       end
       # binding.pry
       respond_with do |format|
