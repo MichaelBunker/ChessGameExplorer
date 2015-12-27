@@ -7,14 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+
+   <!-- <div class="container">
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
     <% if flash[:alert] %>
       <div class="alert"><%= flash[:alert] %></div>
-    <% end %>
-    <div id='cssmenu'>
+    <% end %> -->
+    <div id="bunker">
+
+    <div id='sidebar'>
         <% if user_signed_in? %>
         <ul>
           <li class='<%= yield(:index_active)%>'><%= link_to "Chess", root_path %></a></li>
@@ -32,6 +35,7 @@
          <% end %>
     </div>
     <%= yield %>
-  </div>
+   <!-- </div> -->
+    </div>
 </body>
 </html>
